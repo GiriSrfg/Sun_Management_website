@@ -1,0 +1,311 @@
+/* Financial Services Page Styles */
+.financial-page {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  background: #fbfbfc;
+}
+
+/* Common */
+.fs-section-title {
+  font-size: 32px;
+  color: var(--navy-deep);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.fs-text-center {
+  text-align: center;
+}
+
+/* Hero Section */
+.fs-hero {
+  background: #f7f8fa;
+  padding: 80px var(--page-pad) 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.fs-hero-content {
+  max-width: 600px;
+}
+
+.fs-hero-badge {
+  display: inline-block;
+  background: var(--navy-deep);
+  color: #a0abbc;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 50px;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.fs-hero h1 {
+  font-size: clamp(34px, 4vw, 48px);
+  color: var(--navy-deep);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.fs-hero h1 span {
+  color: var(--gold-dark);
+}
+
+.fs-hero p {
+  color: #5e6776;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+.fs-hero-actions {
+  display: flex; gap: 15px;
+}
+
+.fs-btn-dark {
+  background: var(--navy-deep);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.fs-btn-outline {
+  border: 1px solid var(--navy-deep);
+  color: var(--navy-deep);
+  background: transparent;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 14px;
+  display: flex; align-items: center; gap: 8px;
+}
+
+.fs-hero-visual {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+}
+
+.fs-hero-visual img {
+  width: 100%; display: block;
+}
+
+/* Core Financial Services Section */
+.fs-core {
+  padding: 100px var(--page-pad);
+  background: #fdfdfd;
+  text-align: center;
+}
+
+.fs-core-subtitle {
+  color: var(--gold-dark);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.fs-core-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 60px auto 0;
+}
+
+.fs-core-card {
+  background: white;
+  border-radius: 12px;
+  padding: 40px 30px;
+  text-align: left;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+  border: 1px solid #f0f0f0;
+  display: flex; flex-direction: column;
+}
+
+.fs-core-icon {
+  width: 48px; height: 48px;
+  background: #f4f6fa;
+  color: var(--navy-deep);
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.fs-core-card h3 {
+  font-size: 20px; color: var(--navy-deep); margin-bottom: 15px;
+}
+
+.fs-core-card p {
+  font-size: 14px; color: #5e6776; line-height: 1.6; margin-bottom: 30px;
+}
+
+.fs-feature-list {
+  list-style: none; padding: 0; margin: 0 0 40px; flex-grow: 1;
+}
+
+.fs-feature-list li {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 13px; color: #5e6776; margin-bottom: 16px;
+}
+
+.fs-feature-list svg {
+  color: var(--gold-dark); flex-shrink: 0;
+}
+
+.fs-btn-card {
+  width: 100%; display: block; text-align: center;
+  padding: 12px; border: 1px solid var(--navy-deep);
+  color: var(--navy-deep); font-weight: 600; border-radius: 6px;
+  text-decoration: none; font-size: 14px;
+  transition: all 0.2s;
+}
+
+.fs-btn-card:hover {
+  background: var(--navy-deep); color: white;
+}
+
+/* Why Choose Us Section */
+.fs-why {
+  padding: 80px var(--page-pad);
+  background: white;
+  text-align: center;
+}
+
+.fs-why > p {
+  color: #5e6776; margin-bottom: 50px;
+}
+
+.fs-why-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.fs-why-box {
+  background: #f8f6f4;
+  padding: 30px 15px;
+  border-radius: 8px;
+  display: flex; flex-direction: column; align-items: center; gap: 15px;
+  transition: transform 0.2s;
+}
+
+.fs-why-box:hover {
+  transform: translateY(-5px);
+}
+
+.fs-why-box svg {
+  color: var(--navy-deep);
+}
+
+.fs-why-box span {
+  font-size: 13px; font-weight: 600; color: var(--navy-deep); text-align: center; line-height: 1.4;
+}
+
+/* Process Timeline */
+.fs-process {
+  padding: 100px var(--page-pad);
+  background: #fbfbfc;
+  text-align: center;
+}
+
+.fs-process-timeline {
+  display: flex; justify-content: space-between;
+  max-width: 1100px; margin: 80px auto 0;
+  position: relative;
+}
+
+.fs-process-timeline::before {
+  content: ""; position: absolute;
+  top: 30px; left: 5%; right: 5%;
+  height: 2px; background: var(--gold-dark);
+  z-index: 1; opacity: 0.3;
+}
+
+.fs-process-step {
+  position: relative; z-index: 2;
+  flex: 1; padding: 0 15px;
+}
+
+.fs-process-num {
+  width: 60px; height: 60px;
+  background: white;
+  border: 2px solid var(--gold-dark);
+  color: var(--gold-dark); font-weight: bold; font-size: 18px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; margin: 0 auto 20px;
+  box-shadow: 0 0 0 10px #fbfbfc;
+}
+
+.fs-process-step h4 {
+  font-size: 15px; color: var(--navy-deep); margin-bottom: 12px;
+}
+
+.fs-process-step p {
+  font-size: 13px; color: #5e6776; line-height: 1.5; margin: 0;
+}
+
+/* CTA Banner */
+.fs-cta-wrapper {
+  padding: 60px var(--page-pad) 100px;
+  background: #fbfbfc;
+}
+
+.fs-cta-banner {
+  max-width: 1200px; margin: 0 auto;
+  background: linear-gradient(135deg, var(--navy-deep) 0%, #061122 100%);
+  padding: 60px;
+  border-radius: 16px;
+  display: flex; justify-content: space-between; align-items: center;
+  color: white;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+}
+
+.fs-cta-content h2 {
+  font-size: 32px; margin-bottom: 15px; color: white;
+}
+
+.fs-cta-content p {
+  color: #a0abbc; max-width: 500px; line-height: 1.6; margin: 0; font-size: 14px;
+}
+
+.fs-cta-actions {
+  display: flex; flex-direction: column; gap: 15px; min-width: 250px;
+}
+
+.fs-btn-gold {
+  background: var(--gold); color: var(--navy-deep);
+  padding: 14px 24px; border-radius: 6px; font-weight: bold; text-align: center; text-decoration: none; font-size: 14px;
+}
+
+.fs-btn-dark-outline {
+  background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255,255,255,0.2);
+  padding: 14px 24px; border-radius: 6px; font-weight: 600; text-align: center; text-decoration: none; font-size: 14px;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .fs-hero { grid-template-columns: 1fr; gap: 40px; }
+  .fs-core-grid { grid-template-columns: 1fr; gap: 20px; max-width: 500px; }
+  .fs-why-grid { grid-template-columns: repeat(3, 1fr); }
+  .fs-process-timeline { flex-direction: column; gap: 50px; }
+  .fs-process-timeline::before { display: none; }
+  .fs-cta-banner { flex-direction: column; text-align: center; gap: 40px; }
+}
+
+@media (max-width: 768px) {
+  .fs-why-grid { grid-template-columns: repeat(2, 1fr); }
+  .fs-hero-actions { flex-direction: column; }
+}

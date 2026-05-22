@@ -1,0 +1,169 @@
+/* Contact Page Styles */
+.contact-page {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  background: #fafafa;
+  min-height: 100vh;
+}
+
+/* Common */
+.text-gold { color: var(--gold); }
+.btn-whatsapp-green {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  background: #25D366; color: white; font-weight: bold; font-size: 14px;
+  padding: 12px 24px; border-radius: 6px; border: none; cursor: pointer; width: 100%;
+  text-decoration: none;
+}
+.btn-primary-submit {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  background: var(--gold); color: var(--navy-deep); font-weight: bold; font-size: 14px;
+  padding: 14px 24px; border-radius: 6px; border: none; cursor: pointer; width: 100%;
+}
+
+/* Hero Section */
+.contact-hero {
+  background: var(--navy-deep);
+  background-image: linear-gradient(135deg, rgba(2, 11, 28, 0.95), rgba(8, 32, 62, 0.85)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80');
+  background-size: cover;
+  background-position: center;
+  padding: 80px var(--page-pad) 180px;
+  color: white;
+}
+
+.contact-hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-hero-content h1 {
+  font-size: clamp(36px, 4vw, 48px); margin-bottom: 20px;
+}
+
+.contact-hero-content p {
+  color: #a0abbc; font-size: 16px; line-height: 1.6; max-width: 500px;
+}
+
+/* Content Grid */
+.contact-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 40px;
+  padding: 0 var(--page-pad) 80px;
+  max-width: 1200px;
+  margin: -120px auto 0;
+  position: relative;
+  z-index: 10;
+}
+
+/* Request Callback Card */
+.request-callback-card {
+  background: white;
+  border-radius: 12px;
+  padding: 50px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+}
+
+.request-callback-card h2 {
+  font-size: 24px; color: var(--navy-deep); margin-bottom: 30px;
+  display: flex; align-items: center; gap: 10px;
+}
+
+.request-callback-card h2 svg {
+  color: var(--gold-dark);
+}
+
+.callback-form-full {
+  display: flex; flex-direction: column; gap: 24px;
+}
+
+.form-row {
+  display: flex; gap: 24px;
+}
+
+.form-group-full {
+  flex: 1; display: flex; flex-direction: column; gap: 8px;
+}
+
+.form-group-full label {
+  font-size: 13px; font-weight: 600; color: #4f5968;
+}
+
+.form-group-full input, .form-group-full select, .form-group-full textarea {
+  padding: 12px 16px; border: 1px solid #ddd; border-radius: 6px;
+  font-family: inherit; font-size: 14px; background: #fff;
+}
+
+.form-group-full input:focus, .form-group-full select:focus, .form-group-full textarea:focus {
+  outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(216, 179, 44, 0.1);
+}
+
+/* Right Sidebar */
+.contact-sidebar {
+  display: flex; flex-direction: column; gap: 30px;
+}
+
+/* HQ Card */
+.hq-card {
+  background: #f7f7f7;
+  border-radius: 12px;
+  padding: 40px;
+}
+
+.hq-card h3 {
+  font-size: 20px; color: var(--navy-deep); margin-bottom: 30px;
+}
+
+.hq-details {
+  display: flex; flex-direction: column; gap: 24px; margin-bottom: 30px;
+}
+
+.hq-item {
+  display: flex; gap: 16px;
+}
+
+.hq-icon {
+  color: var(--gold-dark); flex-shrink: 0; margin-top: 2px;
+}
+
+.hq-item-content strong {
+  display: block; font-size: 14px; color: var(--navy-deep); margin-bottom: 4px;
+}
+
+.hq-item-content p {
+  margin: 0; font-size: 14px; color: #5e6776; line-height: 1.5;
+}
+
+.divider {
+  height: 1px; background: #e0e0e0; margin-bottom: 30px;
+}
+
+/* Map Card */
+.map-card {
+  background: var(--navy-deep);
+  border-radius: 12px;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  display: flex; align-items: flex-end; padding: 20px;
+}
+
+.map-card-bg {
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80') center/cover;
+  opacity: 0.6;
+}
+
+.map-label {
+  position: relative; z-index: 1;
+  background: white; color: var(--navy-deep);
+  padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: 600;
+  display: flex; align-items: center; gap: 6px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contact-content-grid { grid-template-columns: 1fr; margin-top: 0; }
+  .form-row { flex-direction: column; gap: 24px; }
+  .request-callback-card { padding: 30px; }
+  .hq-card { padding: 30px; }
+}

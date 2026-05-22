@@ -1,0 +1,375 @@
+/* EMI Support Page Styles */
+.emi-page {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  background: #fdfdfd;
+}
+
+/* Common */
+.emi-section-title {
+  font-size: 32px;
+  color: var(--navy-deep);
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.emi-text-center {
+  text-align: center;
+}
+
+/* Hero Section */
+.emi-hero {
+  background: linear-gradient(135deg, #fdfdfd 0%, #f4f6fa 100%);
+  padding: 80px var(--page-pad) 150px; /* Extra bottom pad for overlapping cards */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  position: relative;
+}
+
+.emi-hero-content {
+  max-width: 600px;
+}
+
+.emi-hero-badge {
+  display: inline-block;
+  background: rgba(234, 185, 45, 0.2);
+  color: var(--gold-dark);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.emi-hero h1 {
+  font-size: clamp(32px, 4vw, 46px);
+  color: var(--navy-deep);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.emi-hero p {
+  color: #5e6776;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.emi-hero-actions {
+  display: flex; gap: 20px;
+}
+
+.emi-btn-dark {
+  background: var(--navy-deep);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.emi-btn-outline {
+  border: 1px solid var(--navy-deep);
+  color: var(--navy-deep);
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.emi-hero-visual {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+}
+
+.emi-hero-visual img {
+  width: 100%; display: block;
+}
+
+/* Overlapping Features */
+.emi-overlap-cards {
+  max-width: 1200px;
+  margin: -100px auto 80px;
+  padding: 0 var(--page-pad);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.emi-overlap-card {
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+  border-left: 3px solid var(--gold);
+}
+
+.emi-card-icon {
+  color: var(--gold-dark);
+  margin-bottom: 12px;
+}
+
+.emi-overlap-card h4 {
+  font-size: 15px;
+  color: var(--navy-deep);
+  margin-bottom: 8px;
+}
+
+.emi-overlap-card p {
+  font-size: 13px;
+  color: #5e6776;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* How We Help */
+.emi-help {
+  padding: 60px var(--page-pad);
+  text-align: center;
+}
+
+.emi-help > p {
+  color: #5e6776; max-width: 600px; margin: 0 auto 50px;
+}
+
+.emi-help-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.emi-help-card {
+  background: white;
+  border: 1px solid #eee;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: left;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.emi-help-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.04);
+}
+
+.emi-help-icon-wrapper {
+  width: 45px; height: 45px;
+  background: #f4f5f7;
+  color: var(--navy-deep);
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.emi-help-card h3 {
+  font-size: 16px;
+  color: var(--navy-deep);
+  margin-bottom: 12px;
+}
+
+.emi-help-card p {
+  font-size: 13px;
+  color: #5e6776;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Why Choose Us (Dark Section) */
+.emi-why-choose {
+  background: var(--navy-deep);
+  color: white;
+  padding: 80px var(--page-pad);
+}
+
+.emi-why-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto 50px;
+}
+
+.emi-why-header h2 {
+  font-size: 32px; margin-bottom: 15px; color: white;
+}
+
+.emi-why-header p {
+  color: #a0abbc; max-width: 500px; line-height: 1.6;
+}
+
+.emi-why-btn {
+  background: var(--gold-dark);
+  color: var(--navy-deep);
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.emi-pills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.emi-pill {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 16px 24px;
+  border-radius: 50px;
+  display: flex; align-items: center; gap: 15px;
+}
+
+.emi-pill svg {
+  color: var(--gold);
+}
+
+.emi-pill span {
+  font-size: 15px; font-weight: 500;
+}
+
+/* Journey Timeline */
+.emi-journey {
+  padding: 100px var(--page-pad);
+  text-align: center;
+  background: white;
+}
+
+.emi-timeline {
+  display: flex; justify-content: space-between;
+  max-width: 1000px; margin: 60px auto 0;
+  position: relative;
+}
+
+.emi-timeline::before {
+  content: ""; position: absolute;
+  top: 25px; left: 5%; right: 5%;
+  height: 2px; background: #e0e4eb;
+  z-index: 1;
+}
+
+.emi-step {
+  position: relative; z-index: 2;
+  flex: 1; padding: 0 10px;
+}
+
+.emi-step-num {
+  width: 50px; height: 50px;
+  background: var(--gold-dark);
+  color: var(--navy-deep); font-weight: bold; font-size: 18px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; margin: 0 auto 15px;
+  box-shadow: 0 0 0 8px white;
+}
+
+.emi-step h4 {
+  font-size: 14px; color: var(--navy-deep); margin-bottom: 8px;
+}
+
+.emi-step p {
+  font-size: 12px; color: #5e6776; line-height: 1.5; margin: 0;
+}
+
+/* Designed For Your Needs */
+.emi-needs {
+  background: #f4f5f7;
+  padding: 80px var(--page-pad);
+  text-align: center;
+}
+
+.emi-needs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1100px; margin: 50px auto 0;
+}
+
+.emi-need-card {
+  background: white;
+  padding: 40px 20px;
+  border-radius: 8px;
+  display: flex; flex-direction: column; align-items: center; gap: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+}
+
+.emi-need-card svg {
+  color: var(--gold-dark);
+}
+
+.emi-need-card span {
+  font-size: 14px; font-weight: 600; color: var(--navy-deep); text-align: center;
+}
+
+/* CTA Banner */
+.emi-cta-banner-wrapper {
+  padding: 80px var(--page-pad);
+  background: white;
+}
+
+.emi-cta-banner {
+  max-width: 1100px; margin: 0 auto;
+  background: linear-gradient(135deg, #f9df88 0%, #eab92d 100%);
+  padding: 60px 50px;
+  border-radius: 16px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+
+.emi-cta-content h2 {
+  font-size: 28px; color: var(--navy-deep); margin-bottom: 15px;
+}
+
+.emi-cta-content p {
+  color: #4a5468; max-width: 500px; line-height: 1.5; margin: 0;
+}
+
+.emi-cta-actions {
+  display: flex; flex-direction: column; gap: 15px;
+}
+
+.emi-cta-btn-dark {
+  background: var(--navy-deep); color: white;
+  padding: 12px 24px; border-radius: 6px; font-weight: bold; text-align: center; text-decoration: none;
+}
+
+.emi-cta-btn-light {
+  background: white; color: var(--navy-deep);
+  padding: 12px 24px; border-radius: 6px; font-weight: bold; text-align: center; text-decoration: none;
+}
+
+/* FAQ Section */
+.emi-faqs {
+  padding: 0 var(--page-pad) 100px;
+  text-align: center;
+  background: white;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .emi-hero { grid-template-columns: 1fr; padding-bottom: 80px; }
+  .emi-overlap-cards { margin-top: 40px; grid-template-columns: repeat(2, 1fr); }
+  .emi-help-grid { grid-template-columns: repeat(2, 1fr); }
+  .emi-why-header { flex-direction: column; text-align: center; gap: 20px; }
+  .emi-pills-grid { grid-template-columns: 1fr; }
+  .emi-needs-grid { grid-template-columns: repeat(2, 1fr); }
+  .emi-timeline { flex-direction: column; gap: 40px; }
+  .emi-timeline::before { display: none; }
+  .emi-cta-banner { flex-direction: column; text-align: center; gap: 30px; }
+}
+
+@media (max-width: 768px) {
+  .emi-overlap-cards { grid-template-columns: 1fr; }
+  .emi-help-grid { grid-template-columns: 1fr; }
+  .emi-needs-grid { grid-template-columns: 1fr; }
+  .emi-hero-actions { flex-direction: column; }
+}

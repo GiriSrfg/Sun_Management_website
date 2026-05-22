@@ -1,0 +1,179 @@
+import { 
+  Wallet, 
+  Briefcase, 
+  FileCheck, 
+  Eye, 
+  PhoneCall, 
+  Mail, 
+  ArrowRight,
+  TrendingUp
+} from 'lucide-react';
+import { Link } from 'react-router-dom';
+import '../Services.css';
+
+export default function Services() {
+  return (
+    <main className="services-page">
+      {/* Hero Section */}
+      <section className="services-hero">
+        <div className="services-hero-content">
+          <div className="resolution-badge">RESOLUTION EXPERTS</div>
+          <h1>Our Comprehensive Recovery Solutions</h1>
+          <p>
+            At Sun Management Services, we leverage a structured, ethical
+            approach to debt recovery, ensuring professional mediation and high
+            success rates for your business. We bridge the gap between financial
+            obligations and resolution with integrity.
+          </p>
+        </div>
+        <div className="services-hero-visual">
+          {/* Placeholder for the office corridor/door image */}
+          <div className="hero-img-placeholder"></div>
+        </div>
+      </section>
+
+      {/* Core Offerings Section */}
+      <section className="core-offerings">
+        <h2>Our Core Offerings</h2>
+        <p>
+          Diverse financial solutions tailored to corporate needs, asset protection, and ethical
+          recovery management.
+        </p>
+        
+        <div className="offerings-grid">
+          {/* We are reusing the exact 4 services from the Home page as requested */}
+          <div className="offering-card">
+            <div className="offering-icon-wrapper"><Wallet size={24} /></div>
+            <h3>Collections & Debt Recovery</h3>
+            <p>Efficient B2B & B2C recovery strategies designed for maximum retention.</p>
+            <Link to="/services/debt-recovery" className="learn-more">Learn More <ArrowRight size={14} /></Link>
+          </div>
+          
+          <div className="offering-card">
+            <div className="offering-icon-wrapper"><Briefcase size={24} /></div>
+            <h3>Personal Loan EMI Support</h3>
+            <p>Proactive resolution services to manage retail EMI defaults efficiently.</p>
+            <Link to="/services/emi-support" className="learn-more">Learn More <ArrowRight size={14} /></Link>
+          </div>
+          
+          <div className="offering-card">
+            <div className="offering-icon-wrapper"><FileCheck size={24} /></div>
+            <h3>Payroll Compliance</h3>
+            <p>End-to-end statutory compliance (PF, ESI, etc.) outsourcing for all industries.</p>
+            <Link to="/services/payroll-compliance" className="learn-more">Learn More <ArrowRight size={14} /></Link>
+          </div>
+          
+          <div className="offering-card">
+            <div className="offering-icon-wrapper"><TrendingUp size={24} /></div>
+            <h3>Financial Services</h3>
+            <p>Investment planning, insurance, and long-term wealth coordination.</p>
+            <Link to="/services/financial-services" className="learn-more">Learn More <ArrowRight size={14} /></Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 4-Step Process Section */}
+      <section className="process-workflow">
+        <h2>Our 4-Step Process</h2>
+        <p>A streamlined workflow designed for maximum transparency and results.</p>
+        
+        <div className="workflow-timeline">
+          <div className="workflow-step">
+            <div className="workflow-number">01</div>
+            <h4>Assessment</h4>
+            <p>Initial review of claims and account documentation.</p>
+          </div>
+          <div className="workflow-step">
+            <div className="workflow-number">02</div>
+            <h4>Mediation</h4>
+            <p>Professional outreach using ethical negotiation techniques.</p>
+          </div>
+          <div className="workflow-step">
+            <div className="workflow-number">03</div>
+            <h4>Resolution</h4>
+            <p>Secure fund recovery and agreement formalization.</p>
+          </div>
+          <div className="workflow-step">
+            <div className="workflow-number">04</div>
+            <h4>Reporting</h4>
+            <p>Detailed status updates and final closing documentation.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Ready Banner */}
+      <section className="ready-banner">
+        <div className="banner-content">
+          <h2>Ready to recover your assets?</h2>
+          <p>
+            Discuss custom recovery strategies with a dedicated specialist. 
+            We provide tailored solutions that align with your brand's values.
+          </p>
+          <a href="https://wa.me/919035551777" className="btn-whatsapp-dark">
+            Chat on WhatsApp
+          </a>
+        </div>
+        <div className="banner-visual">
+          {/* Placeholder for the laptop/dashboard image */}
+          <div className="banner-image"></div>
+        </div>
+      </section>
+
+      {/* Consultation Form */}
+      <section className="consultation-section" id="contact">
+        <div className="consultation-card">
+          <div className="consultation-info">
+            <h2>Ready to Recover Your Assets?</h2>
+            <p>
+              Schedule a confidential consultation with our senior recovery specialists. 
+              We will analyze your portfolio and provide a preliminary strategy within 24 hours.
+            </p>
+            
+            <div className="contact-direct">
+              <div className="contact-direct-item">
+                <PhoneCall size={18} className="contact-direct-icon" />
+                <span>+91 9035551777</span>
+              </div>
+              <div className="contact-direct-item">
+                <Mail size={18} className="contact-direct-icon" />
+                <span>consult@sunmanagement.in</span>
+              </div>
+            </div>
+          </div>
+          
+          <div className="consultation-form-wrapper">
+            <form className="consultation-form">
+              <div className="form-row">
+                <div className="form-group">
+                  <label>Full Name</label>
+                  <input type="text" placeholder="John Doe" />
+                </div>
+                <div className="form-group">
+                  <label>Company Name</label>
+                  <input type="text" placeholder="Enterprise Ltd." />
+                </div>
+              </div>
+              
+              <div className="form-group">
+                <label>Contact Number</label>
+                <input type="tel" placeholder="+91 00000 00000" />
+              </div>
+              
+              <div className="form-group">
+                <label>Service Interested In</label>
+                <select>
+                  <option>Commercial Debt Recovery</option>
+                  <option>Personal Loan EMI Support</option>
+                  <option>Payroll Compliance</option>
+                  <option>Financial Services</option>
+                </select>
+              </div>
+              
+              <button type="submit" className="btn-primary-callback">Request Professional Callback</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
