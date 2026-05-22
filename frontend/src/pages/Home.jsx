@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { 
   Building2, 
   ShieldCheck, 
@@ -17,6 +18,65 @@ import { Link } from 'react-router-dom';
 import '../Home.css';
 
 export default function Home() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    companyName: '',
+    phone: '',
+    email: '',
+    service: 'Debt Recovery',
+    message: ''
+  });
+
+  const [status, setStatus] = useState({
+    loading: false,
+    success: null,
+    error: null
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus({ loading: true, success: null, error: null });
+
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
+    try {
+      const response = await fetch(`${API_URL}/api/callback`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+      if (response.ok && data.success) {
+        setStatus({ loading: false, success: data.message, error: null });
+        setFormData({
+          firstName: '',
+          companyName: '',
+          phone: '',
+          email: '',
+          service: 'Debt Recovery',
+          message: ''
+        });
+      } else {
+        setStatus({ loading: false, success: null, error: data.message || 'Failed to submit request.' });
+      }
+    } catch (err) {
+      setStatus({ 
+        loading: false, 
+        success: null, 
+        error: 'Unable to connect to the server. Please ensure the backend is running or try again later.' 
+      });
+    }
+  };
   return (
     <main className="home-page">
       {/* Hero Section */}
@@ -227,46 +287,139 @@ export default function Home() {
         <div className="contact-split">
           <div className="contact-form-container reveal-slide-left">
             <h2>Request a Callback</h2>
-          <form className="callback-form">
-            <div className="form-row">
-              <div className="form-group form-input-animate">
-                <label>First Name</label>
-                <input type="text" placeholder="John Doe" />
-              </div>
-              <div className="form-group form-input-animate">
-                <label>Company Name</label>
-                <input type="text" placeholder="Acme Corp" />
-              </div>
-            </div>
             
-            <div className="form-row">
-              <div className="form-group form-input-animate">
-                <label>Phone Number</label>
-                <input type="tel" placeholder="+91 00000 00000" />
+            {status.success && (
+              <div className="alert-message success" style={{
+                backgroundColor: status.success.includes('[MOCK DEMO]') ? 'rgba(245, 158, 11, 0.1)' : 'rgba(16, 185, 129, 0.1)',
+                borderLeft: status.success.includes('[MOCK DEMO]') ? '4px solid #f59e0b' : '4px solid #10b981',
+                color: status.success.includes('[MOCK DEMO]') ? '#d97706' : '#10b981',
+                padding: '12px 16px',
+                borderRadius: '6px',
+                marginBottom: '20px',
+                fontSize: '14px',
+                fontWeight: '500'
+              }}>
+                {status.success.includes('[MOCK DEMO]') ? (
+                  <div>
+                    <strong>⚠️ Mock Test Successful!</strong>
+                    <p style={{ margin: '4px 0 0 0', fontSize: '13px', fontWeight: 'normal', lineHeight: '1.4' }}>
+                      The form was submitted in development mock mode. Email details have been printed to your backend server terminal console.
+                    </p>
+                  </div>
+                ) : (
+                  <div>
+                    <strong>✓ Success!</strong>
+                    <p style={{ margin: '4px 0 0 0', fontSize: '13px', fontWeight: 'normal', lineHeight: '1.4' }}>
+                      Thank you! Your callback request has been submitted successfully. A specialist from Sun Management will contact you shortly.
+                    </p>
+                  </div>
+                )}
               </div>
-              <div className="form-group form-input-animate">
-                <label>Email Address</label>
-                <input type="email" placeholder="john@example.com" />
+            )}
+
+            {status.error && (
+              <div className="alert-message error" style={{
+                backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                borderLeft: '4px solid #ef4444',
+                color: '#ef4444',
+                padding: '12px 16px',
+                borderRadius: '6px',
+                marginBottom: '20px',
+                fontSize: '14px',
+                fontWeight: '500'
+              }}>
+                {status.error}
               </div>
-            </div>
-            
-            <div className="form-group form-input-animate">
-              <label>Service Interested</label>
-              <select>
-                <option>Debt Recovery</option>
-                <option>Payroll Compliance</option>
-                <option>Financial Services</option>
-              </select>
-            </div>
-            
-            <div className="form-group form-input-animate">
-              <label>Message</label>
-              <textarea placeholder="How can we help you?" rows="4"></textarea>
-            </div>
-            
-            <button type="submit" className="btn-primary full-width">Submit Request</button>
-          </form>
-        </div>
+            )}
+
+            <form className="callback-form" onSubmit={handleSubmit}>
+              <div className="form-row">
+                <div className="form-group form-input-animate">
+                  <label>First Name / Full Name</label>
+                  <input 
+                    type="text" 
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    placeholder="John Doe" 
+                    required
+                  />
+                </div>
+                <div className="form-group form-input-animate">
+                  <label>Company Name</label>
+                  <input 
+                    type="text" 
+                    name="companyName"
+                    value={formData.companyName}
+                    onChange={handleChange}
+                    placeholder="Acme Corp" 
+                  />
+                </div>
+              </div>
+              
+              <div className="form-row">
+                <div className="form-group form-input-animate">
+                  <label>Phone Number</label>
+                  <input 
+                    type="tel" 
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="+91 00000 00000" 
+                    required
+                  />
+                </div>
+                <div className="form-group form-input-animate">
+                  <label>Email Address</label>
+                  <input 
+                    type="email" 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="john@example.com" 
+                    required
+                  />
+                </div>
+              </div>
+              
+              <div className="form-group form-input-animate">
+                <label>Service Interested</label>
+                <select 
+                  name="service"
+                  value={formData.service}
+                  onChange={handleChange}
+                >
+                  <option value="Debt Recovery">Debt Recovery</option>
+                  <option value="Payroll Compliance">Payroll Compliance</option>
+                  <option value="Financial Services">Financial Services</option>
+                </select>
+              </div>
+              
+              <div className="form-group form-input-animate">
+                <label>Message</label>
+                <textarea 
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="How can we help you?" 
+                  rows="4"
+                  required
+                ></textarea>
+              </div>
+              
+              <button 
+                type="submit" 
+                className="btn-primary full-width"
+                disabled={status.loading}
+                style={{
+                  opacity: status.loading ? 0.7 : 1,
+                  cursor: status.loading ? 'not-allowed' : 'pointer'
+                }}
+              >
+                {status.loading ? 'Submitting Request...' : 'Submit Request'}
+              </button>
+            </form>
+          </div>
         
         <div className="contact-info-container reveal-slide-right">
           <div className="info-details">
