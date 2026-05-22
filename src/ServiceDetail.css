@@ -383,17 +383,107 @@
 }
 
 /* Responsive */
-@media (max-width: 1000px) {
-  .needs-grid { grid-template-columns: repeat(2, 1fr); }
-  .strategic-advantages { grid-template-columns: 1fr; }
-  .sd-contact-card { grid-template-columns: 1fr; }
+/* --- Responsiveness Overrides --- */
+
+/* Tablet Viewports (768px - 1023px) */
+@media (max-width: 1023px) {
+  .needs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .process-steps {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .process-line {
+    display: none;
+  }
+
+  .strategic-advantages {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .sd-contact-card {
+    grid-template-columns: 1fr;
+  }
 }
 
-@media (max-width: 768px) {
-  .needs-grid { grid-template-columns: 1fr; }
-  .process-steps { grid-template-columns: 1fr; gap: 30px; }
-  .process-line { display: none; }
-  .adv-grid { grid-template-columns: 1fr; }
-  .sd-form .form-row { flex-direction: column; gap: 0; }
-  .sd-form-side, .sd-info-side { padding: 30px; }
+/* Mobile Viewports (320px - 767px) */
+@media (max-width: 767px) {
+  .sd-hero {
+    padding: 60px 16px 80px;
+  }
+
+  .sd-hero-content h1 {
+    font-size: 32px;
+  }
+
+  .needs-service {
+    padding: 60px 16px;
+  }
+
+  .needs-service h2 {
+    font-size: 26px;
+  }
+
+  .needs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .unified-process {
+    padding: 60px 16px;
+  }
+
+  .unified-process h2 {
+    font-size: 26px;
+  }
+
+  .process-steps {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .strategic-advantages {
+    padding: 60px 16px;
+  }
+
+  .adv-content h2 {
+    font-size: 26px;
+  }
+
+  .adv-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faqs-section {
+    padding: 60px 16px;
+  }
+
+  .faqs-section h2 {
+    font-size: 26px;
+  }
+
+  .sd-contact-footer {
+    padding: 0 16px 60px;
+  }
+
+  .sd-form-side {
+    padding: 30px 20px;
+  }
+
+  .sd-form-side h2 {
+    font-size: 24px;
+  }
+
+  .sd-form .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .sd-info-side {
+    padding: 40px 20px;
+  }
 }

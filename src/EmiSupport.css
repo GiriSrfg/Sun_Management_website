@@ -354,22 +354,68 @@
   background: white;
 }
 
-/* Responsive */
-@media (max-width: 1000px) {
-  .emi-hero { grid-template-columns: 1fr; padding-bottom: 80px; }
-  .emi-overlap-cards { margin-top: 40px; grid-template-columns: repeat(2, 1fr); }
-  .emi-help-grid { grid-template-columns: repeat(2, 1fr); }
-  .emi-why-header { flex-direction: column; text-align: center; gap: 20px; }
-  .emi-pills-grid { grid-template-columns: 1fr; }
-  .emi-needs-grid { grid-template-columns: repeat(2, 1fr); }
-  .emi-timeline { flex-direction: column; gap: 40px; }
-  .emi-timeline::before { display: none; }
-  .emi-cta-banner { flex-direction: column; text-align: center; gap: 30px; }
+/* Responsive overrides */
+@media (max-width: 1023px) {
+  .emi-hero {
+    grid-template-columns: 1fr;
+    padding-bottom: 80px;
+    gap: 30px;
+  }
+  .emi-overlap-cards {
+    margin-top: 40px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .emi-help-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .emi-why-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  .emi-pills-grid {
+    grid-template-columns: 1fr;
+  }
+  .emi-needs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .emi-timeline {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .emi-timeline::before {
+    display: none;
+  }
+  .emi-cta-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
 }
 
-@media (max-width: 768px) {
-  .emi-overlap-cards { grid-template-columns: 1fr; }
-  .emi-help-grid { grid-template-columns: 1fr; }
-  .emi-needs-grid { grid-template-columns: 1fr; }
-  .emi-hero-actions { flex-direction: column; }
+@media (max-width: 767px) {
+  .emi-hero {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+  .emi-overlap-cards {
+    grid-template-columns: 1fr;
+    margin-top: 20px;
+  }
+  .emi-help-grid {
+    grid-template-columns: 1fr;
+  }
+  .emi-needs-grid {
+    grid-template-columns: 1fr;
+  }
+  .emi-hero-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .emi-btn-dark, .emi-btn-outline {
+    text-align: center;
+  }
+  .emi-cta-banner {
+    padding: 40px 20px;
+  }
 }
