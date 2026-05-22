@@ -11,11 +11,29 @@
   background: var(--gold); color: var(--navy-deep); font-weight: bold;
   padding: 12px 24px; border-radius: 6px; border: none; cursor: pointer;
   text-decoration: none;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-whatsapp-dark:hover {
+  transform: translateY(-2px);
+  background: var(--gold-dark);
+  box-shadow: 0 8px 20px rgba(234, 185, 45, 0.25);
+}
+.btn-whatsapp-dark:active {
+  transform: scale(0.98);
 }
 .btn-primary-callback {
   display: inline-flex; align-items: center; justify-content: center;
   background: var(--gold); color: var(--navy-deep); font-weight: bold;
   padding: 14px 24px; border-radius: 6px; border: none; cursor: pointer; width: 100%;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-primary-callback:hover {
+  transform: translateY(-2px);
+  background: var(--gold-dark);
+  box-shadow: 0 8px 20px rgba(234, 185, 45, 0.25);
+}
+.btn-primary-callback:active {
+  transform: scale(0.98);
 }
 
 /* Hero Section */
@@ -79,17 +97,26 @@
 .offering-card {
   background: white; padding: 40px 30px; border-radius: 12px;
   text-align: left; border: 1px solid #eee;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
 }
 
 .offering-card:hover {
-  transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(6, 18, 38, 0.08);
+  border-color: rgba(234, 185, 45, 0.3);
 }
 
 .offering-icon-wrapper {
   background: #eef2f6; color: var(--navy-deep);
   width: 50px; height: 50px; border-radius: 8px;
   display: flex; align-items: center; justify-content: center; margin-bottom: 25px;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.offering-card:hover .offering-icon-wrapper {
+  transform: scale(1.08);
+  background: var(--navy-deep);
+  color: white;
 }
 
 .offering-card h3 {
@@ -103,6 +130,20 @@
 .learn-more {
   color: var(--gold-dark); font-weight: 700; font-size: 14px;
   display: inline-flex; align-items: center; gap: 5px;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.learn-more svg {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.offering-card:hover .learn-more {
+  color: var(--navy-deep);
+}
+
+.offering-card:hover .learn-more svg {
+  transform: translateX(4px);
 }
 
 /* 4-Step Process Section */
@@ -130,13 +171,25 @@
 
 .workflow-step {
   position: relative; z-index: 1; flex: 1; padding: 0 15px;
+  transition: transform 0.3s ease;
+}
+
+.workflow-step:hover {
+  transform: translateY(-4px);
 }
 
 .workflow-number {
   width: 50px; height: 50px; background: var(--navy-deep); color: white; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   font-weight: bold; font-size: 16px; margin: 0 auto 20px;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 0 0 10px #f5f5f5;
+}
+
+.workflow-step:hover .workflow-number {
+  background-color: var(--gold);
+  color: var(--navy-deep);
+  box-shadow: 0 0 0 10px rgba(234, 185, 45, 0.2);
 }
 
 .workflow-step h4 {
@@ -166,9 +219,19 @@
   color: #a0abbc; font-size: 16px; margin-bottom: 30px; line-height: 1.6;
 }
 
+.banner-visual {
+  overflow: hidden;
+  width: 100%; height: 100%;
+}
+
 .banner-image {
   background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80') center/cover;
   width: 100%; height: 100%;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ready-banner:hover .banner-image {
+  transform: scale(1.05);
 }
 
 /* Form Section */

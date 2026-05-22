@@ -12,10 +12,10 @@ export default function Contact() {
   return (
     <main className="contact-page">
       {/* Hero Section */}
-      <section className="contact-hero">
+      <section className="contact-hero reveal-fade-in">
         <div className="contact-hero-content">
-          <h1>Get in Touch</h1>
-          <p>
+          <h1 className="reveal-fade-up">Get in Touch</h1>
+          <p className="reveal-fade-up" style={{ transitionDelay: '0.1s' }}>
             Have questions about payment recovery or financial support? Our experts are 
             here to help you resolve your portfolio challenges with authority and reliability.
           </p>
@@ -26,33 +26,33 @@ export default function Contact() {
       <section className="contact-content-grid">
         
         {/* Left Column: Form */}
-        <div className="request-callback-card">
+        <div className="request-callback-card reveal-fade-up">
           <h2><MessageSquare size={24} /> Request a Callback</h2>
           
           <form className="callback-form-full">
             <div className="form-row">
-              <div className="form-group-full">
+              <div className="form-group-full form-input-animate">
                 <label>Full Name</label>
                 <input type="text" placeholder="John Doe" />
               </div>
-              <div className="form-group-full">
+              <div className="form-group-full form-input-animate">
                 <label>Company Name</label>
                 <input type="text" placeholder="Global Enterprises Inc." />
               </div>
             </div>
             
             <div className="form-row">
-              <div className="form-group-full">
+              <div className="form-group-full form-input-animate">
                 <label>Work Email</label>
                 <input type="email" placeholder="john@company.com" />
               </div>
-              <div className="form-group-full">
+              <div className="form-group-full form-input-animate">
                 <label>Phone Number</label>
                 <input type="tel" placeholder="+91 90000 00000" />
               </div>
             </div>
             
-            <div className="form-group-full">
+            <div className="form-group-full form-input-animate">
               <label>Service Interested In</label>
               <select>
                 <option>Collections Recovery</option>
@@ -62,7 +62,7 @@ export default function Contact() {
               </select>
             </div>
             
-            <div className="form-group-full">
+            <div className="form-group-full form-input-animate">
               <label>Message</label>
               <textarea rows="4" placeholder="How can we assist you with your portfolio today?"></textarea>
             </div>
@@ -77,7 +77,7 @@ export default function Contact() {
         <div className="contact-sidebar">
           
           {/* HQ Details Card */}
-          <div className="hq-card">
+          <div className="hq-card reveal-fade-up" style={{ transitionDelay: '0.1s' }}>
             <h3>Our Headquarters</h3>
             
             <div className="hq-details">
@@ -122,7 +122,7 @@ export default function Contact() {
           </div>
 
           {/* Map Image Card */}
-          <div className="map-card">
+          <div className="map-card reveal-scale-in" style={{ transitionDelay: '0.2s' }}>
             <div className="map-card-bg"></div>
             <div className="map-label">
               <MapPin size={14} /> Sun Management HQ

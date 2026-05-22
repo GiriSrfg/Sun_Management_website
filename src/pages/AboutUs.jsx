@@ -44,10 +44,10 @@ const differences = [
 export default function AboutUs() {
   return (
     <main>
-      <section className="about-hero" id="top">
+      <section className="about-hero reveal-fade-in" id="top">
         <div className="hero-overlay">
-          <h1>Commitment to Financial Integrity</h1>
-          <p>
+          <h1 className="reveal-fade-up">Commitment to Financial Integrity</h1>
+          <p className="reveal-fade-up" style={{ transitionDelay: '0.1s' }}>
             Since our inception, Sun Management Services has been at the forefront of
             ethical debt recovery and financial verification. We navigate the
             complexities of financial resolution with unmatched professionalism and a
@@ -56,7 +56,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      <section className="mission-vision" id="about" aria-label="Mission and vision">
+      <section className="mission-vision reveal-stagger" id="about" aria-label="Mission and vision">
         <article className="info-card">
           <div className="card-title">
             <span><Icon name="target" /></span>
@@ -85,10 +85,10 @@ export default function AboutUs() {
       </section>
 
       <section className="values-section">
-        <div className="section-heading">
+        <div className="section-heading reveal-fade-up">
           <h2>Our Core Values</h2>
         </div>
-        <div className="value-grid">
+        <div className="value-grid reveal-stagger">
           {values.map((value) => (
             <article className="value-card" key={value.title}>
               <span className="round-icon"><Icon name={value.icon} /></span>
@@ -100,7 +100,7 @@ export default function AboutUs() {
       </section>
 
       <section className="story-section">
-        <div className="story-copy">
+        <div className="story-copy reveal-fade-up">
           <h2>Our Story</h2>
           <p>
             Sun Management Services was founded with a single vision: to redefine the
@@ -120,7 +120,7 @@ export default function AboutUs() {
             effective when grounded in integrity and strategic insight.
           </p>
         </div>
-        <div className="handshake-visual" role="img" aria-label="Business partners shaking hands">
+        <div className="handshake-visual reveal-scale-in" role="img" aria-label="Business partners shaking hands" style={{ transitionDelay: '0.2s' }}>
           <div className="sleeve sleeve-left"></div>
           <div className="sleeve sleeve-right"></div>
           <div className="hand hand-left"></div>
@@ -129,11 +129,11 @@ export default function AboutUs() {
       </section>
 
       <section className="difference-section" id="services">
-        <div className="difference-heading">
+        <div className="difference-heading reveal-fade-up">
           <h2>Why We Are Different</h2>
           <p>Setting new standards in the debt recovery industry.</p>
         </div>
-        <div className="difference-grid">
+        <div className="difference-grid reveal-stagger">
           {differences.map((item) => (
             <article className="difference-item" key={item.title}>
               <span><Icon name={item.icon} /></span>
@@ -147,7 +147,7 @@ export default function AboutUs() {
       </section>
 
       <section className="cta-section" id="contact">
-        <div className="cta-card">
+        <div className="cta-card reveal-scale-in">
           <h2>Ready to Resolve Your Portfolio?</h2>
           <p>
             Join dozens of financial institutions that trust Sun Management Services

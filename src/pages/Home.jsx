@@ -22,28 +22,28 @@ export default function Home() {
       {/* Hero Section */}
       <section className="home-hero">
         <div className="hero-content">
-          <div className="badge-text">SUN MANAGEMENT SERVICES</div>
-          <h1>
+          <div className="badge-text reveal-fade-up">SUN MANAGEMENT SERVICES</div>
+          <h1 className="reveal-fade-up" style={{transitionDelay: '0.1s'}}>
             Professional Recovery,<br/>
             Financial & <span className="text-gold">Compliance</span><br/>
             <span className="text-gold">Solutions</span>
           </h1>
-          <p>
+          <p className="reveal-fade-up" style={{transitionDelay: '0.2s'}}>
             Empowering financial institutions with ethical, efficient, and data-driven
             recovery practices. Your trusted partner in sustainable business
             statutory compliance.
           </p>
-          <div className="hero-actions">
+          <div className="hero-actions reveal-fade-up" style={{transitionDelay: '0.3s'}}>
             <a href="#contact" className="btn-primary">Request Callback</a>
             <a href="#services" className="btn-outline">Explore Partnership</a>
           </div>
         </div>
         
         <div className="hero-visual">
-          <div className="image-container">
+          <div className="image-container reveal-scale-in premium-float">
             {/* Placeholder for modern office image */}
             <div className="placeholder-image office-bg"></div>
-            <div className="years-badge">
+            <div className="years-badge reveal-fade-in" style={{transitionDelay: '0.4s'}}>
               <span className="years-icon"><CheckCircle2 size={24} /></span>
               <div>
                 <strong>15+ Years</strong>
@@ -55,7 +55,7 @@ export default function Home() {
       </section>
 
       {/* Feature Row */}
-      <section className="features-row">
+      <section className="features-row reveal-stagger">
         <div className="feature-card">
           <ShieldCheck className="feature-icon" size={24} />
           <div>
@@ -88,12 +88,12 @@ export default function Home() {
 
       {/* Services Section */}
       <section className="home-services" id="services">
-        <div className="section-header">
+        <div className="section-header reveal-fade-up">
           <span className="sub-heading">WHAT WE OFFER</span>
           <h2>Our Core Services</h2>
         </div>
         
-        <div className="services-grid">
+        <div className="services-grid reveal-stagger">
           <div className="service-card">
             <div className="service-icon-wrapper"><Wallet size={28} /></div>
             <h3>Collections & Debt Recovery</h3>
@@ -126,9 +126,9 @@ export default function Home() {
 
       {/* 4-Step Process */}
       <section className="process-section">
-        <h2>Our 4-Step Process</h2>
+        <h2 className="reveal-fade-up">Our 4-Step Process</h2>
         
-        <div className="process-timeline">
+        <div className="process-timeline reveal-stagger">
           <div className="step">
             <div className="step-number">01</div>
             <h4>Assessment</h4>
@@ -151,7 +151,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="process-split">
+        <div className="process-split reveal-fade-up">
           <div className="process-image">
             <div className="placeholder-image meeting-bg">
               <div className="image-overlay-text">
@@ -186,19 +186,19 @@ export default function Home() {
               </li>
             </ul>
             
-            <a href="/about" className="btn-dark">Talk to Us</a>
+            <a href="/about" className="btn-dark hover-arrow-btn">Talk to Us</a>
           </div>
         </div>
       </section>
 
       {/* Why Partners Choose Us */}
       <section className="partners-section">
-        <div className="partners-header">
+        <div className="partners-header reveal-fade-up">
           <h2>Why Partners Choose Us</h2>
           <p>The foundation of our enduring alliances</p>
         </div>
         
-        <div className="partners-grid">
+        <div className="partners-grid reveal-stagger">
           <div className="partner-card">
             <Briefcase size={32} className="text-gold" />
             <h4>Professional Team</h4>
@@ -225,32 +225,32 @@ export default function Home() {
       {/* Contact Section */}
       <section className="contact-section-wrapper" id="contact">
         <div className="contact-split">
-          <div className="contact-form-container">
+          <div className="contact-form-container reveal-slide-left">
             <h2>Request a Callback</h2>
           <form className="callback-form">
             <div className="form-row">
-              <div className="form-group">
+              <div className="form-group form-input-animate">
                 <label>First Name</label>
                 <input type="text" placeholder="John Doe" />
               </div>
-              <div className="form-group">
+              <div className="form-group form-input-animate">
                 <label>Company Name</label>
                 <input type="text" placeholder="Acme Corp" />
               </div>
             </div>
             
             <div className="form-row">
-              <div className="form-group">
+              <div className="form-group form-input-animate">
                 <label>Phone Number</label>
                 <input type="tel" placeholder="+91 00000 00000" />
               </div>
-              <div className="form-group">
+              <div className="form-group form-input-animate">
                 <label>Email Address</label>
                 <input type="email" placeholder="john@example.com" />
               </div>
             </div>
             
-            <div className="form-group">
+            <div className="form-group form-input-animate">
               <label>Service Interested</label>
               <select>
                 <option>Debt Recovery</option>
@@ -259,7 +259,7 @@ export default function Home() {
               </select>
             </div>
             
-            <div className="form-group">
+            <div className="form-group form-input-animate">
               <label>Message</label>
               <textarea placeholder="How can we help you?" rows="4"></textarea>
             </div>
@@ -268,7 +268,7 @@ export default function Home() {
           </form>
         </div>
         
-        <div className="contact-info-container">
+        <div className="contact-info-container reveal-slide-right">
           <div className="info-details">
             <h3>Contact Information</h3>
             <div className="info-item">

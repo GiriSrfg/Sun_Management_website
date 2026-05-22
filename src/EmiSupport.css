@@ -70,6 +70,15 @@
   border-radius: 6px;
   font-weight: 600;
   text-decoration: none;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.emi-btn-dark:hover {
+  transform: translateY(-2px);
+  background: #0d2c52;
+  box-shadow: 0 8px 20px rgba(8, 32, 62, 0.25);
+}
+.emi-btn-dark:active {
+  transform: scale(0.98);
 }
 
 .emi-btn-outline {
@@ -79,6 +88,15 @@
   border-radius: 6px;
   font-weight: 600;
   text-decoration: none;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, color 0.3s ease;
+}
+.emi-btn-outline:hover {
+  transform: translateY(-2px);
+  background: var(--navy-deep);
+  color: white;
+}
+.emi-btn-outline:active {
+  transform: scale(0.98);
 }
 
 .emi-hero-visual {
@@ -89,6 +107,10 @@
 
 .emi-hero-visual img {
   width: 100%; display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.emi-hero-visual:hover img {
+  transform: scale(1.05);
 }
 
 /* Overlapping Features */
@@ -109,11 +131,24 @@
   border-radius: 8px;
   box-shadow: 0 15px 35px rgba(0,0,0,0.05);
   border-left: 3px solid var(--gold);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+  border-top: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+.emi-overlap-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(6, 18, 38, 0.08);
+  border-color: rgba(234, 185, 45, 0.2) rgba(234, 185, 45, 0.2) rgba(234, 185, 45, 0.2) var(--gold);
 }
 
 .emi-card-icon {
   color: var(--gold-dark);
   margin-bottom: 12px;
+  transition: transform 0.3s ease;
+}
+.emi-overlap-card:hover .emi-card-icon {
+  transform: scale(1.1) rotate(3deg);
 }
 
 .emi-overlap-card h4 {
@@ -153,12 +188,13 @@
   padding: 30px;
   border-radius: 8px;
   text-align: left;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
 }
 
 .emi-help-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.04);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(6, 18, 38, 0.06);
+  border-color: rgba(234, 185, 45, 0.25);
 }
 
 .emi-help-icon-wrapper {
@@ -168,6 +204,13 @@
   display: flex; align-items: center; justify-content: center;
   border-radius: 8px;
   margin-bottom: 20px;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.emi-help-card:hover .emi-help-icon-wrapper {
+  transform: scale(1.08);
+  background: var(--navy-deep);
+  color: white;
 }
 
 .emi-help-card h3 {
@@ -213,6 +256,15 @@
   border-radius: 6px;
   font-weight: bold;
   text-decoration: none;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.emi-why-btn:hover {
+  transform: translateY(-2px);
+  background: var(--gold);
+  box-shadow: 0 8px 20px rgba(234, 185, 45, 0.25);
+}
+.emi-why-btn:active {
+  transform: scale(0.98);
 }
 
 .emi-pills-grid {
@@ -229,10 +281,22 @@
   padding: 16px 24px;
   border-radius: 50px;
   display: flex; align-items: center; gap: 15px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.emi-pill:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(234, 185, 45, 0.3);
 }
 
 .emi-pill svg {
   color: var(--gold);
+  transition: transform 0.3s ease;
+}
+
+.emi-pill:hover svg {
+  transform: scale(1.1);
 }
 
 .emi-pill span {
@@ -262,6 +326,11 @@
 .emi-step {
   position: relative; z-index: 2;
   flex: 1; padding: 0 10px;
+  transition: transform 0.3s ease;
+}
+
+.emi-step:hover {
+  transform: translateY(-4px);
 }
 
 .emi-step-num {
@@ -271,6 +340,13 @@
   display: flex; align-items: center; justify-content: center;
   border-radius: 50%; margin: 0 auto 15px;
   box-shadow: 0 0 0 8px white;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.emi-step:hover .emi-step-num {
+  background-color: var(--navy-deep);
+  color: white;
+  box-shadow: 0 0 0 8px rgba(8, 32, 62, 0.15);
 }
 
 .emi-step h4 {
@@ -301,10 +377,23 @@
   border-radius: 8px;
   display: flex; flex-direction: column; align-items: center; gap: 15px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+  border: 1px solid transparent;
+}
+
+.emi-need-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(6, 18, 38, 0.05);
+  border-color: rgba(234, 185, 45, 0.25);
 }
 
 .emi-need-card svg {
   color: var(--gold-dark);
+  transition: transform 0.3s ease;
+}
+
+.emi-need-card:hover svg {
+  transform: scale(1.15);
 }
 
 .emi-need-card span {
@@ -340,11 +429,29 @@
 .emi-cta-btn-dark {
   background: var(--navy-deep); color: white;
   padding: 12px 24px; border-radius: 6px; font-weight: bold; text-align: center; text-decoration: none;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.emi-cta-btn-dark:hover {
+  transform: translateY(-2px);
+  background: #0d2c52;
+  box-shadow: 0 8px 20px rgba(8, 32, 62, 0.25);
+}
+.emi-cta-btn-dark:active {
+  transform: scale(0.98);
 }
 
 .emi-cta-btn-light {
   background: white; color: var(--navy-deep);
   padding: 12px 24px; border-radius: 6px; font-weight: bold; text-align: center; text-decoration: none;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.emi-cta-btn-light:hover {
+  transform: translateY(-2px);
+  background: #f4f6fa;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.25);
+}
+.emi-cta-btn-light:active {
+  transform: scale(0.98);
 }
 
 /* FAQ Section */

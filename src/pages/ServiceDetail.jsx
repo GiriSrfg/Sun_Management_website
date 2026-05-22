@@ -35,21 +35,21 @@ export default function ServiceDetail() {
       {/* Hero Section */}
       <section className="sd-hero">
         <div className="sd-hero-content">
-          <h1>Expert Collections & Strategic Debt Recovery</h1>
-          <p>
+          <h1 className="reveal-fade-up">Expert Collections & Strategic Debt Recovery</h1>
+          <p className="reveal-fade-up" style={{ transitionDelay: '0.1s' }}>
             Professional, ethical, and structured recovery solutions designed to restore
             financial stability while preserving business relationships. We bridge the gap
             between credit risk and capital recovery.
           </p>
-          <a href="#callback" className="btn-primary">Request Callback</a>
+          <a href="#callback" className="btn-primary reveal-fade-up" style={{ transitionDelay: '0.2s' }}>Request Callback</a>
         </div>
       </section>
 
       {/* Who Needs This Service? */}
       <section className="needs-service">
-        <h2>Who Needs This Service?</h2>
+        <h2 className="reveal-fade-up">Who Needs This Service?</h2>
         
-        <div className="needs-grid">
+        <div className="needs-grid reveal-stagger">
           <div className="need-card">
             <div className="need-icon"><Building2 size={20} /></div>
             <h3>Large Scale Corporations</h3>
@@ -78,12 +78,12 @@ export default function ServiceDetail() {
 
       {/* Unified Recovery Process */}
       <section className="unified-process">
-        <h2>Our Unified Recovery Process</h2>
-        <p>A multi-phase approach ensuring maximum resolution with minimal friction.</p>
+        <h2 className="reveal-fade-up">Our Unified Recovery Process</h2>
+        <p className="reveal-fade-up" style={{ transitionDelay: '0.1s' }}>A multi-phase approach ensuring maximum resolution with minimal friction.</p>
         
         <div className="process-steps-container">
           <div className="process-line"></div>
-          <div className="process-steps">
+          <div className="process-steps reveal-stagger">
             <div className="p-step">
               <div className="p-step-icon"><ClipboardList size={28} /></div>
               <h4>Assessment</h4>
@@ -115,7 +115,7 @@ export default function ServiceDetail() {
 
       {/* Strategic Advantages */}
       <section className="strategic-advantages">
-        <div className="adv-content">
+        <div className="adv-content reveal-fade-up">
           <h2>Strategic Advantages</h2>
           <p>
             Our methodology leverages local ground knowledge with modern technology
@@ -157,10 +157,10 @@ export default function ServiceDetail() {
           </div>
         </div>
         
-        <div className="adv-visual">
+        <div className="adv-visual reveal-scale-in" style={{ transitionDelay: '0.2s' }}>
           <div className="adv-image-container">
             <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80" alt="Professional analyzing data" />
-            <div className="success-badge">
+            <div className="success-badge reveal-fade-in" style={{ transitionDelay: '0.4s' }}>
               <strong>90% Average Success Rate</strong>
               <p>In mediation phase resolution for B2B accounts.</p>
             </div>
@@ -170,9 +170,9 @@ export default function ServiceDetail() {
 
       {/* FAQs */}
       <section className="faqs-section">
-        <h2>Frequently Asked Questions</h2>
+        <h2 className="reveal-fade-up">Frequently Asked Questions</h2>
         
-        <div className="faqs-list">
+        <div className="faqs-list reveal-stagger">
           {faqs.map((faq, idx) => (
             <div key={idx} className={`faq-wrapper ${activeFaq === idx ? 'active' : ''}`}>
               <div className="faq-item" onClick={() => toggleFaq(idx)}>
@@ -191,34 +191,34 @@ export default function ServiceDetail() {
 
       {/* Request Callback Footer */}
       <section className="sd-contact-footer" id="callback">
-        <div className="sd-contact-card">
+        <div className="sd-contact-card reveal-fade-up">
           
           <div className="sd-form-side">
             <h2>Request a Callback</h2>
             <form className="sd-form">
               <div className="form-row">
-                <div className="form-group">
+                <div className="form-group form-input-animate">
                   <label>Full Name</label>
                   <input type="text" placeholder="John Doe" />
                 </div>
-                <div className="form-group">
+                <div className="form-group form-input-animate">
                   <label>Company Name</label>
                   <input type="text" placeholder="Acme Corp" />
                 </div>
               </div>
               
               <div className="form-row">
-                <div className="form-group">
+                <div className="form-group form-input-animate">
                   <label>Phone Number</label>
                   <input type="tel" placeholder="+91 00000 00000" />
                 </div>
-                <div className="form-group">
+                <div className="form-group form-input-animate">
                   <label>Email Address</label>
                   <input type="email" placeholder="john@example.com" />
                 </div>
               </div>
               
-              <div className="form-group">
+              <div className="form-group form-input-animate">
                 <label>Service Required</label>
                 <select>
                   <option>Debt Recovery</option>
@@ -226,7 +226,7 @@ export default function ServiceDetail() {
                 </select>
               </div>
               
-              <div className="form-group">
+              <div className="form-group form-input-animate">
                 <label>Message</label>
                 <textarea rows="3" placeholder="How can we help you?"></textarea>
               </div>

@@ -73,6 +73,13 @@
   font-weight: 600;
   text-decoration: none;
   font-size: 14px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+}
+
+.fs-btn-dark:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(2, 11, 28, 0.25);
+  background-color: #1a2a40;
 }
 
 .fs-btn-outline {
@@ -85,6 +92,14 @@
   text-decoration: none;
   font-size: 14px;
   display: flex; align-items: center; gap: 8px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, color 0.3s ease;
+}
+
+.fs-btn-outline:hover {
+  transform: translateY(-3px);
+  background-color: var(--navy-deep);
+  color: white;
+  box-shadow: 0 8px 20px rgba(2, 11, 28, 0.15);
 }
 
 .fs-hero-visual {
@@ -130,6 +145,13 @@
   box-shadow: 0 10px 40px rgba(0,0,0,0.04);
   border: 1px solid #f0f0f0;
   display: flex; flex-direction: column;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+}
+
+.fs-core-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.08);
+  border-color: var(--gold);
 }
 
 .fs-core-icon {
@@ -139,6 +161,13 @@
   display: flex; align-items: center; justify-content: center;
   border-radius: 12px;
   margin-bottom: 24px;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.fs-core-card:hover .fs-core-icon {
+  transform: scale(1.05);
+  background-color: var(--navy-deep);
+  color: var(--gold);
 }
 
 .fs-core-card h3 {
@@ -198,15 +227,23 @@
   padding: 30px 15px;
   border-radius: 8px;
   display: flex; flex-direction: column; align-items: center; gap: 15px;
-  transition: transform 0.2s;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
 }
 
 .fs-why-box:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+  background-color: #f3f0ec;
 }
 
 .fs-why-box svg {
   color: var(--navy-deep);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.fs-why-box:hover svg {
+  transform: scale(1.15);
+  color: var(--gold-dark);
 }
 
 .fs-why-box span {
@@ -236,6 +273,11 @@
 .fs-process-step {
   position: relative; z-index: 2;
   flex: 1; padding: 0 15px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fs-process-step:hover {
+  transform: translateY(-5px);
 }
 
 .fs-process-num {
@@ -246,6 +288,13 @@
   display: flex; align-items: center; justify-content: center;
   border-radius: 50%; margin: 0 auto 20px;
   box-shadow: 0 0 0 10px #fbfbfc;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fs-process-step:hover .fs-process-num {
+  transform: scale(1.1);
+  border-color: var(--navy-deep);
+  box-shadow: 0 0 0 10px #fbfbfc, 0 0 0 14px var(--gold);
 }
 
 .fs-process-step h4 {
@@ -287,12 +336,27 @@
 .fs-btn-gold {
   background: var(--gold); color: var(--navy-deep);
   padding: 14px 24px; border-radius: 6px; font-weight: bold; text-align: center; text-decoration: none; font-size: 14px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+}
+
+.fs-btn-gold:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(234, 185, 45, 0.35);
+  background-color: #f0c23a;
 }
 
 .fs-btn-dark-outline {
   background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255,255,255,0.2);
   padding: 14px 24px; border-radius: 6px; font-weight: 600; text-align: center; text-decoration: none; font-size: 14px;
   display: flex; align-items: center; justify-content: center; gap: 8px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.fs-btn-dark-outline:hover {
+  transform: translateY(-3px);
+  background-color: white;
+  color: var(--navy-deep);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
 }
 
 /* Responsive overrides */

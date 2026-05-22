@@ -59,6 +59,13 @@
   text-decoration: none;
   font-size: 15px;
   display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+}
+
+.btn-yellow:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(234, 185, 45, 0.35);
+  background-color: #f0c23a;
 }
 
 .btn-outline-light {
@@ -70,6 +77,14 @@
   text-decoration: none;
   font-size: 15px;
   display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline-light:hover {
+  transform: translateY(-3px);
+  background-color: white;
+  color: var(--navy-deep);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
 }
 
 .pc-hero-image {
@@ -101,6 +116,13 @@
   border-radius: 8px;
   box-shadow: 0 15px 35px rgba(0,0,0,0.06);
   border-top: 3px solid var(--gold);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+}
+
+.pc-info-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.1);
+  border-color: #f0c23a;
 }
 
 .pc-info-icon {
@@ -160,6 +182,14 @@
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.03);
   text-align: left;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-top 0.4s ease;
+  border-top: 3px solid transparent;
+}
+
+.pc-support-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  border-top: 3px solid var(--gold);
 }
 
 .pc-support-card-icon {
@@ -169,6 +199,13 @@
   display: flex; align-items: center; justify-content: center;
   border-radius: 8px;
   margin-bottom: 24px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.pc-support-card:hover .pc-support-card-icon {
+  background-color: var(--navy-deep);
+  color: var(--gold);
+  transform: scale(1.05);
 }
 
 .pc-support-card h3 {
@@ -207,6 +244,12 @@
   display: flex;
   gap: 20px;
   align-items: flex-start;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pc-feature-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.05);
 }
 
 .pc-feature-icon {
@@ -216,6 +259,13 @@
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.pc-feature-item:hover .pc-feature-icon {
+  transform: rotate(360deg) scale(1.1);
+  background-color: var(--gold);
+  color: var(--navy-deep);
 }
 
 .pc-feature-text h4 {
@@ -265,6 +315,11 @@
   z-index: 2;
   flex: 1;
   padding: 0 10px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pc-step:hover {
+  transform: translateY(-5px);
 }
 
 .pc-step-number {
@@ -277,6 +332,12 @@
   border-radius: 50%;
   margin: 0 auto 20px;
   box-shadow: 0 0 0 8px var(--navy-deep);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pc-step:hover .pc-step-number {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 8px var(--navy-deep), 0 0 0 12px var(--gold);
 }
 
 .pc-step h4 {
@@ -312,16 +373,23 @@
   padding: 30px 15px;
   border-radius: 8px;
   display: flex; flex-direction: column; align-items: center; gap: 15px;
-  transition: transform 0.3s;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
 }
 
 .pc-industry-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+  border-color: var(--gold);
 }
 
 .pc-industry-card svg {
   color: var(--navy-deep);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.pc-industry-card:hover svg {
+  transform: scale(1.15);
+  color: var(--gold);
 }
 
 .pc-industry-card span {
@@ -372,6 +440,13 @@
   border-radius: 6px;
   text-decoration: none;
   font-size: 15px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+}
+
+.btn-white:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.25);
+  background-color: #f4f5f7;
 }
 
 /* Responsive overrides */

@@ -16,32 +16,32 @@ export default function FinancialServices() {
   return (
     <main className="financial-page">
       {/* Hero Section */}
-      <section className="fs-hero">
+      <section className="fs-hero reveal-fade-in">
         <div className="fs-hero-content">
-          <div className="fs-hero-badge">FINANCIAL PLANNING & INVESTMENT SUPPORT</div>
-          <h1>Finance & <span>Investment</span><br/>Services</h1>
-          <p>
+          <div className="fs-hero-badge reveal-fade-up">FINANCIAL PLANNING & INVESTMENT SUPPORT</div>
+          <h1 className="reveal-fade-up" style={{ transitionDelay: '0.1s' }}>Finance & <span>Investment</span><br/>Services</h1>
+          <p className="reveal-fade-up" style={{ transitionDelay: '0.2s' }}>
             Professional guidance and support services for Insurance, 
             investment planning, wealth growth, and financial management.
           </p>
-          <div className="fs-hero-actions">
+          <div className="fs-hero-actions reveal-fade-up" style={{ transitionDelay: '0.3s' }}>
             <a href="/contact" className="fs-btn-dark">Schedule Consultation</a>
             <a href="https://wa.me/919035551777" className="fs-btn-outline">
               <MessageSquare size={18} /> WhatsApp Support
             </a>
           </div>
         </div>
-        <div className="fs-hero-visual">
+        <div className="fs-hero-visual reveal-scale-in" style={{ transitionDelay: '0.2s' }}>
           <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80" alt="Financial growth chart on tablet" />
         </div>
       </section>
 
       {/* Core Financial Services Section */}
       <section className="fs-core">
-        <span className="fs-core-subtitle">PREMIUM SOLUTIONS</span>
-        <h2 className="fs-section-title">Our Core Financial Services</h2>
+        <span className="fs-core-subtitle reveal-fade-up">PREMIUM SOLUTIONS</span>
+        <h2 className="fs-section-title reveal-fade-up" style={{ transitionDelay: '0.1s' }}>Our Core Financial Services</h2>
         
-        <div className="fs-core-grid">
+        <div className="fs-core-grid reveal-stagger">
           {/* Life Insurance */}
           <div className="fs-core-card">
             <div className="fs-core-icon"><ShieldCheck size={24} /></div>
@@ -88,10 +88,10 @@ export default function FinancialServices() {
 
       {/* Why Choose Us Section */}
       <section className="fs-why">
-        <h2 className="fs-section-title">Why Choose Our Financial Services</h2>
-        <p className="fs-text-center">Dedicated expertise in managing your financial aspirations</p>
+        <h2 className="fs-section-title reveal-fade-up">Why Choose Our Financial Services</h2>
+        <p className="fs-text-center reveal-fade-up" style={{ transitionDelay: '0.1s' }}>Dedicated expertise in managing your financial aspirations</p>
         
-        <div className="fs-why-grid">
+        <div className="fs-why-grid reveal-stagger">
           <div className="fs-why-box">
             <Users size={28} />
             <span>Personalized Financial<br/>Support</span>
@@ -117,9 +117,9 @@ export default function FinancialServices() {
 
       {/* Support Process Timeline */}
       <section className="fs-process">
-        <h2 className="fs-section-title">Our Financial Support Process</h2>
+        <h2 className="fs-section-title reveal-fade-up">Our Financial Support Process</h2>
         
-        <div className="fs-process-timeline">
+        <div className="fs-process-timeline reveal-stagger">
           <div className="fs-process-step">
             <div className="fs-process-num">01</div>
             <h4>Requirement Discussion</h4>
@@ -145,7 +145,7 @@ export default function FinancialServices() {
 
       {/* CTA Banner */}
       <div className="fs-cta-wrapper">
-        <div className="fs-cta-banner">
+        <div className="fs-cta-banner reveal-scale-in">
           <div className="fs-cta-content">
             <h2>Start Building Your<br/>Financial Future</h2>
             <p>Connect with our support team for professional insurance and investment assistance. Let us help you navigate your path to wealth security.</p>

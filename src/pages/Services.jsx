@@ -17,16 +17,16 @@ export default function Services() {
       {/* Hero Section */}
       <section className="services-hero">
         <div className="services-hero-content">
-          <div className="resolution-badge">RESOLUTION EXPERTS</div>
-          <h1>Our Comprehensive Recovery Solutions</h1>
-          <p>
+          <div className="resolution-badge reveal-fade-up">RESOLUTION EXPERTS</div>
+          <h1 className="reveal-fade-up" style={{ transitionDelay: '0.1s' }}>Our Comprehensive Recovery Solutions</h1>
+          <p className="reveal-fade-up" style={{ transitionDelay: '0.2s' }}>
             At Sun Management Services, we leverage a structured, ethical
             approach to debt recovery, ensuring professional mediation and high
             success rates for your business. We bridge the gap between financial
             obligations and resolution with integrity.
           </p>
         </div>
-        <div className="services-hero-visual">
+        <div className="services-hero-visual reveal-scale-in premium-float">
           {/* Placeholder for the office corridor/door image */}
           <div className="hero-img-placeholder"></div>
         </div>
@@ -34,13 +34,13 @@ export default function Services() {
 
       {/* Core Offerings Section */}
       <section className="core-offerings">
-        <h2>Our Core Offerings</h2>
-        <p>
+        <h2 className="reveal-fade-up">Our Core Offerings</h2>
+        <p className="reveal-fade-up" style={{ transitionDelay: '0.1s' }}>
           Diverse financial solutions tailored to corporate needs, asset protection, and ethical
           recovery management.
         </p>
         
-        <div className="offerings-grid">
+        <div className="offerings-grid reveal-stagger">
           {/* We are reusing the exact 4 services from the Home page as requested */}
           <div className="offering-card">
             <div className="offering-icon-wrapper"><Wallet size={24} /></div>
@@ -74,10 +74,10 @@ export default function Services() {
 
       {/* 4-Step Process Section */}
       <section className="process-workflow">
-        <h2>Our 4-Step Process</h2>
-        <p>A streamlined workflow designed for maximum transparency and results.</p>
+        <h2 className="reveal-fade-up">Our 4-Step Process</h2>
+        <p className="reveal-fade-up" style={{ transitionDelay: '0.1s' }}>A streamlined workflow designed for maximum transparency and results.</p>
         
-        <div className="workflow-timeline">
+        <div className="workflow-timeline reveal-stagger">
           <div className="workflow-step">
             <div className="workflow-number">01</div>
             <h4>Assessment</h4>
@@ -102,7 +102,7 @@ export default function Services() {
       </section>
 
       {/* Ready Banner */}
-      <section className="ready-banner">
+      <section className="ready-banner reveal-fade-up">
         <div className="banner-content">
           <h2>Ready to recover your assets?</h2>
           <p>
@@ -113,7 +113,7 @@ export default function Services() {
             Chat on WhatsApp
           </a>
         </div>
-        <div className="banner-visual">
+        <div className="banner-visual reveal-scale-in" style={{ transitionDelay: '0.2s' }}>
           {/* Placeholder for the laptop/dashboard image */}
           <div className="banner-image"></div>
         </div>
@@ -121,7 +121,7 @@ export default function Services() {
 
       {/* Consultation Form */}
       <section className="consultation-section" id="contact">
-        <div className="consultation-card">
+        <div className="consultation-card reveal-fade-up">
           <div className="consultation-info">
             <h2>Ready to Recover Your Assets?</h2>
             <p>
@@ -144,22 +144,22 @@ export default function Services() {
           <div className="consultation-form-wrapper">
             <form className="consultation-form">
               <div className="form-row">
-                <div className="form-group">
+                <div className="form-group form-input-animate">
                   <label>Full Name</label>
                   <input type="text" placeholder="John Doe" />
                 </div>
-                <div className="form-group">
+                <div className="form-group form-input-animate">
                   <label>Company Name</label>
                   <input type="text" placeholder="Enterprise Ltd." />
                 </div>
               </div>
               
-              <div className="form-group">
+              <div className="form-group form-input-animate">
                 <label>Contact Number</label>
                 <input type="tel" placeholder="+91 00000 00000" />
               </div>
               
-              <div className="form-group">
+              <div className="form-group form-input-animate">
                 <label>Service Interested In</label>
                 <select>
                   <option>Commercial Debt Recovery</option>

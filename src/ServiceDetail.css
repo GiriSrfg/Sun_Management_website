@@ -89,6 +89,13 @@
   box-shadow: 0 10px 30px rgba(0,0,0,0.04);
   text-align: left;
   border: 1px solid #f0f0f0;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+}
+
+.need-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(6, 18, 38, 0.06);
+  border-color: rgba(234, 185, 45, 0.25);
 }
 
 .need-icon {
@@ -98,6 +105,13 @@
   border-radius: 8px;
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 20px;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.need-card:hover .need-icon {
+  transform: scale(1.08);
+  background: var(--gold);
+  color: var(--navy-deep);
 }
 
 .need-card h3 {
@@ -150,6 +164,11 @@
 
 .p-step {
   padding: 0 10px;
+  transition: transform 0.3s ease;
+}
+
+.p-step:hover {
+  transform: translateY(-4px);
 }
 
 .p-step-icon {
@@ -160,10 +179,23 @@
   display: flex; align-items: center; justify-content: center;
   margin: 0 auto 20px;
   box-shadow: 0 0 0 8px #f4f5f7;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.p-step:hover .p-step-icon {
+  background-color: var(--gold);
+  color: var(--navy-deep);
+  box-shadow: 0 0 0 8px rgba(234, 185, 45, 0.2);
 }
 
 .p-step.final .p-step-icon {
   background: var(--gold-dark);
+}
+
+.p-step.final:hover .p-step-icon {
+  background: var(--gold);
+  color: var(--navy-deep);
+  box-shadow: 0 0 0 8px rgba(234, 185, 45, 0.2);
 }
 
 .p-step h4 {
@@ -227,6 +259,11 @@
 
 .adv-image-container img {
   width: 100%; display: block; height: auto;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.adv-image-container:hover img {
+  transform: scale(1.05);
 }
 
 .success-badge {
@@ -277,11 +314,12 @@
   padding: 20px 24px;
   display: flex; justify-content: space-between; align-items: center;
   text-align: left; font-weight: 600; color: var(--navy-deep); font-size: 15px;
-  cursor: pointer; transition: background 0.2s;
+  cursor: pointer; transition: background 0.3s ease, color 0.3s ease;
 }
 
 .faq-item:hover {
   background: #e9eaec;
+  color: var(--gold-dark);
 }
 
 .faq-icon {
@@ -342,6 +380,17 @@
 .sd-btn-submit {
   background: var(--gold); color: var(--navy-deep); font-weight: bold;
   padding: 14px 24px; border-radius: 6px; border: none; cursor: pointer; width: 100%;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sd-btn-submit:hover {
+  transform: translateY(-2px);
+  background: var(--gold-dark);
+  box-shadow: 0 8px 20px rgba(234, 185, 45, 0.25);
+}
+
+.sd-btn-submit:active {
+  transform: scale(0.98);
 }
 
 .sd-info-side {
@@ -375,6 +424,18 @@
   background: #25D366; color: white; font-weight: bold; padding: 12px 24px;
   border-radius: 6px; border: none; cursor: pointer; text-decoration: none;
   width: 100%; margin-top: 10px; margin-bottom: 20px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-2px);
+  background: #20ba5a;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+}
+
+.btn-whatsapp:active {
+  transform: scale(0.98);
 }
 
 .sd-map-bg {

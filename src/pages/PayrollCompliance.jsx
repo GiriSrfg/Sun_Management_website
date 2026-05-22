@@ -43,27 +43,27 @@ export default function PayrollCompliance() {
   return (
     <main className="payroll-page">
       {/* Hero Section */}
-      <section className="pc-hero">
+      <section className="pc-hero reveal-fade-in">
         <div className="pc-hero-content">
-          <div className="pc-hero-badge">PAYROLL & COMPLIANCE</div>
-          <h1>Payroll & Statutory<br/>Compliance Services</h1>
-          <p>
+          <div className="pc-hero-badge reveal-fade-up">PAYROLL & COMPLIANCE</div>
+          <h1 className="reveal-fade-up" style={{ transitionDelay: '0.1s' }}>Payroll & Statutory<br/>Compliance Services</h1>
+          <p className="reveal-fade-up" style={{ transitionDelay: '0.2s' }}>
             End-to-end payroll processing and statutory compliance management. 
             Automate your HR operations, mitigate legal risks, and focus on your 
             core business.
           </p>
-          <div className="pc-hero-actions">
+          <div className="pc-hero-actions reveal-fade-up" style={{ transitionDelay: '0.3s' }}>
             <a href="#contact" className="btn-yellow">Consult an Expert</a>
             <a href="#services" className="btn-outline-light">View our Services</a>
           </div>
         </div>
-        <div className="pc-hero-image">
+        <div className="pc-hero-image reveal-scale-in" style={{ transitionDelay: '0.2s' }}>
           <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80" alt="Payroll dashboard on laptop" />
         </div>
       </section>
 
       {/* Overlapping Info Cards */}
-      <div className="pc-info-cards">
+      <div className="pc-info-cards reveal-stagger">
         <div className="pc-info-card">
           <FileCheck className="pc-info-icon" size={24} />
           <h4>Payroll Calculation</h4>
@@ -88,8 +88,8 @@ export default function PayrollCompliance() {
 
       {/* What We Support Section */}
       <section className="pc-support" id="services">
-        <h2 className="pc-section-title">What We Support</h2>
-        <div className="pc-support-grid">
+        <h2 className="pc-section-title reveal-fade-up">What We Support</h2>
+        <div className="pc-support-grid reveal-stagger">
           <div className="pc-support-card">
             <div className="pc-support-card-icon"><Settings size={24} /></div>
             <h3>Payroll Processing Support</h3>
@@ -110,8 +110,8 @@ export default function PayrollCompliance() {
 
       {/* Why Choose Us Section */}
       <section className="pc-why-choose">
-        <h2 className="pc-section-title">Why Businesses Choose Payroll & Compliance Support</h2>
-        <div className="pc-features-grid">
+        <h2 className="pc-section-title reveal-fade-up">Why Businesses Choose Payroll & Compliance Support</h2>
+        <div className="pc-features-grid reveal-stagger">
           <div className="pc-feature-item">
             <div className="pc-feature-icon"><CheckCircle2 size={20} /></div>
             <div className="pc-feature-text">
@@ -159,9 +159,9 @@ export default function PayrollCompliance() {
 
       {/* How We Get Started Section */}
       <section className="pc-process">
-        <h2 className="pc-section-title">How We Get Started</h2>
+        <h2 className="pc-section-title reveal-fade-up">How We Get Started</h2>
         <br/><br/>
-        <div className="pc-process-steps">
+        <div className="pc-process-steps reveal-stagger">
           <div className="pc-step">
             <div className="pc-step-number">1</div>
             <h4>Requirement Discovery</h4>
@@ -192,8 +192,8 @@ export default function PayrollCompliance() {
 
       {/* Industries Section */}
       <section className="pc-industries">
-        <h2 className="pc-section-title">Industries We Empower</h2>
-        <div className="pc-industries-grid">
+        <h2 className="pc-section-title reveal-fade-up">Industries We Empower</h2>
+        <div className="pc-industries-grid reveal-stagger">
           <div className="pc-industry-card">
             <Store size={32} />
             <span>Retail<br/>Businesses</span>
@@ -223,8 +223,8 @@ export default function PayrollCompliance() {
 
       {/* FAQs */}
       <section className="pc-faqs">
-        <h2 className="pc-section-title">Frequently Asked Questions</h2>
-        <div className="faqs-list">
+        <h2 className="pc-section-title reveal-fade-up">Frequently Asked Questions</h2>
+        <div className="faqs-list reveal-stagger">
           {faqs.map((faq, idx) => (
             <div key={idx} className={`faq-wrapper ${activeFaq === idx ? 'active' : ''}`}>
               <div className="faq-item" onClick={() => toggleFaq(idx)}>
@@ -242,7 +242,7 @@ export default function PayrollCompliance() {
       </section>
 
       {/* CTA Banner */}
-      <div className="pc-cta-banner">
+      <div className="pc-cta-banner reveal-scale-in">
         <h2>Need Professional Payroll & Compliance Support?</h2>
         <p>Connect with our experts to ensure your business meets all statutory requirements and maintains seamless HR operations.</p>
         <div className="pc-cta-actions">
@@ -253,7 +253,7 @@ export default function PayrollCompliance() {
 
       {/* Reusing the Contact Footer from ServiceDetail */}
       <section className="sd-contact-footer" id="contact">
-        <div className="sd-contact-card">
+        <div className="sd-contact-card reveal-fade-up">
           <div className="sd-info-side" style={{background: 'var(--navy-deep)'}}>
             <div>
               <h3 style={{color: 'var(--gold)'}}>Contact Information</h3>
@@ -293,28 +293,28 @@ export default function PayrollCompliance() {
           <div className="sd-form-side">
             <form className="sd-form">
               <div className="form-row">
-                <div className="form-group">
+                <div className="form-group form-input-animate">
                   <label>Full Name *</label>
                   <input type="text" placeholder="John Doe" required />
                 </div>
-                <div className="form-group">
+                <div className="form-group form-input-animate">
                   <label>Company Name *</label>
                   <input type="text" placeholder="Acme Corp" required />
                 </div>
               </div>
               
               <div className="form-row">
-                <div className="form-group">
+                <div className="form-group form-input-animate">
                   <label>Phone Number *</label>
                   <input type="tel" placeholder="+91 00000 00000" required />
                 </div>
-                <div className="form-group">
+                <div className="form-group form-input-animate">
                   <label>Email Address</label>
                   <input type="email" placeholder="john@example.com" />
                 </div>
               </div>
               
-              <div className="form-group">
+              <div className="form-group form-input-animate">
                 <label>Service Interested In</label>
                 <select>
                   <option>Payroll Processing</option>
@@ -323,7 +323,7 @@ export default function PayrollCompliance() {
                 </select>
               </div>
               
-              <div className="form-group">
+              <div className="form-group form-input-animate">
                 <label>Message</label>
                 <textarea rows="4" placeholder="How can we help your business?"></textarea>
               </div>

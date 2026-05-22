@@ -40,24 +40,24 @@ export default function EmiSupport() {
       {/* Hero Section */}
       <section className="emi-hero">
         <div className="emi-hero-content">
-          <div className="emi-hero-badge">RETAIL LOAN MANAGEMENT</div>
-          <h1>Personal Loan EMI<br/>Collection Support<br/>Services</h1>
-          <p>
+          <div className="emi-hero-badge reveal-fade-up">RETAIL LOAN MANAGEMENT</div>
+          <h1 className="reveal-fade-up" style={{ transitionDelay: '0.1s' }}>Personal Loan EMI<br/>Collection Support<br/>Services</h1>
+          <p className="reveal-fade-up" style={{ transitionDelay: '0.2s' }}>
             Professional assistance for institutions managing retail loan portfolios. 
             We ensure prompt EMI collection and cooperative borrower communication.
           </p>
-          <div className="emi-hero-actions">
+          <div className="emi-hero-actions reveal-fade-up" style={{ transitionDelay: '0.3s' }}>
             <a href="/contact" className="emi-btn-dark">Request Consult</a>
             <a href="#help" className="emi-btn-outline">Discover More</a>
           </div>
         </div>
-        <div className="emi-hero-visual">
+        <div className="emi-hero-visual reveal-scale-in premium-float">
           <img src="https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&q=80" alt="Consultant reviewing loan documents" />
         </div>
       </section>
 
       {/* Overlapping Features */}
-      <div className="emi-overlap-cards">
+      <div className="emi-overlap-cards reveal-stagger">
         <div className="emi-overlap-card">
           <RefreshCcw className="emi-card-icon" size={24} />
           <h4>EMI Coordination</h4>
@@ -82,10 +82,10 @@ export default function EmiSupport() {
 
       {/* How We Help Section */}
       <section className="emi-help" id="help">
-        <h2 className="emi-section-title">How We Help</h2>
-        <p>Our comprehensive support framework bridges the communication gap between your institution and your retail clients.</p>
+        <h2 className="emi-section-title reveal-fade-up">How We Help</h2>
+        <p className="reveal-fade-up" style={{ transitionDelay: '0.1s' }}>Our comprehensive support framework bridges the communication gap between your institution and your retail clients.</p>
         
-        <div className="emi-help-grid">
+        <div className="emi-help-grid reveal-stagger">
           <div className="emi-help-card">
             <div className="emi-help-icon-wrapper"><PhoneCall size={20} /></div>
             <h3>EMI Follow-up Support</h3>
@@ -119,9 +119,9 @@ export default function EmiSupport() {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
+      {/* Why Choose Section */}
       <section className="emi-why-choose">
-        <div className="emi-why-header">
+        <div className="emi-why-header reveal-fade-up">
           <div>
             <h2>Why Choose Our EMI Support Services</h2>
             <p>We are dedicated to maximizing your retail loan recovery rate while strictly protecting your brand's reputation.</p>
@@ -129,7 +129,7 @@ export default function EmiSupport() {
           <a href="/contact" className="emi-why-btn">Book a Consultation</a>
         </div>
         
-        <div className="emi-pills-grid">
+        <div className="emi-pills-grid reveal-stagger">
           <div className="emi-pill">
             <CheckCircle2 size={20} />
             <span>Professional Communication Support</span>
@@ -159,9 +159,9 @@ export default function EmiSupport() {
 
       {/* Journey to Resolution */}
       <section className="emi-journey">
-        <h2 className="emi-section-title">Your Journey to Resolution</h2>
+        <h2 className="emi-section-title reveal-fade-up">Your Journey to Resolution</h2>
         
-        <div className="emi-timeline">
+        <div className="emi-timeline reveal-stagger">
           <div className="emi-step">
             <div className="emi-step-num">1</div>
             <h4>Requirement Discovery</h4>
@@ -192,8 +192,8 @@ export default function EmiSupport() {
 
       {/* Designed For Your Needs */}
       <section className="emi-needs">
-        <h2 className="emi-section-title">Designed For Your Needs</h2>
-        <div className="emi-needs-grid">
+        <h2 className="emi-section-title reveal-fade-up">Designed For Your Needs</h2>
+        <div className="emi-needs-grid reveal-stagger">
           <div className="emi-need-card">
             <User size={32} />
             <span>Individual Loan Holders</span>
@@ -215,7 +215,7 @@ export default function EmiSupport() {
 
       {/* CTA Banner */}
       <div className="emi-cta-banner-wrapper">
-        <div className="emi-cta-banner">
+        <div className="emi-cta-banner reveal-fade-up">
           <div className="emi-cta-content">
             <h2>Need Professional EMI Support Assistance?</h2>
             <p>Connect with our expert team to structure a tailored communication strategy for your retail portfolio.</p>
@@ -229,8 +229,8 @@ export default function EmiSupport() {
 
       {/* FAQs */}
       <section className="emi-faqs">
-        <h2 className="emi-section-title">Frequently Asked Questions</h2>
-        <div className="faqs-list" style={{ marginTop: '40px' }}>
+        <h2 className="emi-section-title reveal-fade-up">Frequently Asked Questions</h2>
+        <div className="faqs-list reveal-stagger" style={{ marginTop: '40px' }}>
           {faqs.map((faq, idx) => (
             <div key={idx} className={`faq-wrapper ${activeFaq === idx ? 'active' : ''}`}>
               <div className="faq-item" onClick={() => toggleFaq(idx)}>

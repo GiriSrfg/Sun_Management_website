@@ -24,6 +24,40 @@ export function Layout({ children }) {
     }
   }, [mobileMenuOpen]);
 
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  // Scroll reveal trigger
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const revealElements = document.querySelectorAll(
+        '.reveal-fade-up, .reveal-fade-in, .reveal-scale-in, .reveal-slide-left, .reveal-slide-right, .reveal-stagger'
+      );
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal-active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.05,
+        rootMargin: '0px 0px -30px 0px'
+      });
+
+      revealElements.forEach((el) => observer.observe(el));
+
+      return () => {
+        observer.disconnect();
+      };
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [location.pathname]);
+
   return (
     <div className="site-shell">
       <header className={`topbar ${scrolled ? 'scrolled' : ''}`}>
@@ -76,20 +110,20 @@ export function Layout({ children }) {
         </div>
         
         <nav className="drawer-nav">
-          <Link to="/" className={location.pathname === '/' ? 'active' : ''} onClick={() => setMobileMenuOpen(false)}>Home</Link>
-          <Link to="/about" className={location.pathname === '/about' ? 'active' : ''} onClick={() => setMobileMenuOpen(false)}>About Us</Link>
-          <Link to="/services" className={location.pathname === '/services' ? 'active' : ''} onClick={() => setMobileMenuOpen(false)}>Services</Link>
-          <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''} onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+          <Link to="/" style={{'--i': 1}} className={location.pathname === '/' ? 'active' : ''} onClick={() => setMobileMenuOpen(false)}>Home</Link>
+          <Link to="/about" style={{'--i': 2}} className={location.pathname === '/about' ? 'active' : ''} onClick={() => setMobileMenuOpen(false)}>About Us</Link>
+          <Link to="/services" style={{'--i': 3}} className={location.pathname === '/services' ? 'active' : ''} onClick={() => setMobileMenuOpen(false)}>Services</Link>
+          <Link to="/contact" style={{'--i': 4}} className={location.pathname === '/contact' ? 'active' : ''} onClick={() => setMobileMenuOpen(false)}>Contact</Link>
         </nav>
 
         <div className="drawer-actions">
-          <a className="drawer-phone" href="tel:+919035551777">
+          <a className="drawer-phone" style={{'--i': 5}} href="tel:+919035551777">
             <Icon name="phone" /> +91 9035551777
           </a>
-          <Link className="drawer-callback" to="/contact" onClick={() => setMobileMenuOpen(false)}>
+          <Link className="drawer-callback" style={{'--i': 6}} to="/contact" onClick={() => setMobileMenuOpen(false)}>
             Request Callback
           </Link>
-          <a className="drawer-whatsapp" href="https://wa.me/919035551777" target="_blank" rel="noopener noreferrer">
+          <a className="drawer-whatsapp" style={{'--i': 7}} href="https://wa.me/919035551777" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '8px', verticalAlign: 'middle'}}>
               <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
             </svg>
