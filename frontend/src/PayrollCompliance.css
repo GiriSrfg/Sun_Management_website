@@ -512,3 +512,18 @@
     padding: 40px 20px;
   }
 }
+
+/* Custom Contact Footer Layout for Reversed Grid Casing on Payroll Page */
+@media (min-width: 1024px) {
+  .payroll-page .sd-contact-card {
+    grid-template-columns: 400px 1fr !important;
+  }
+}
+
+.payroll-page .sd-form input,
+.payroll-page .sd-form select,
+.payroll-page .sd-form textarea {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
