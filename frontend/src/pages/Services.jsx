@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { 
   Wallet, 
   Briefcase, 
@@ -12,6 +13,64 @@ import { Link } from 'react-router-dom';
 import '../Services.css';
 
 export default function Services() {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    companyName: '',
+    phone: '',
+    service: 'Commercial Debt Recovery',
+    message: 'Requested a professional callback from the Services Overview page.'
+  });
+
+  const [status, setStatus] = useState({
+    loading: false,
+    success: null,
+    error: null
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus({ loading: true, success: null, error: null });
+
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
+    try {
+      const response = await fetch(`${API_URL}/api/callback`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+      if (response.ok && data.success) {
+        setStatus({ loading: false, success: data.message, error: null });
+        setFormData({
+          fullName: '',
+          companyName: '',
+          phone: '',
+          service: 'Commercial Debt Recovery',
+          message: 'Requested a professional callback from the Services Overview page.'
+        });
+      } else {
+        setStatus({ loading: false, success: null, error: data.message || 'Failed to submit request.' });
+      }
+    } catch (err) {
+      setStatus({ 
+        loading: false, 
+        success: null, 
+        error: 'Unable to connect to the server. Please ensure the backend is running or try again later.' 
+      });
+    }
+  };
+
   return (
     <main className="services-page">
       {/* Hero Section */}
@@ -142,34 +201,101 @@ export default function Services() {
           </div>
           
           <div className="consultation-form-wrapper">
-            <form className="consultation-form">
+            {status.success && (
+              <div className="alert-message success" style={{
+                backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                borderLeft: '4px solid #10b981',
+                color: '#10b981',
+                padding: '12px 16px',
+                borderRadius: '6px',
+                marginBottom: '20px',
+                fontSize: '14px',
+                fontWeight: '500'
+              }}>
+                <strong>✓ Success!</strong>
+                <p style={{ margin: '4px 0 0 0', fontSize: '13px', fontWeight: 'normal', lineHeight: '1.4' }}>
+                  Your request has been submitted successfully!
+                </p>
+              </div>
+            )}
+
+            {status.error && (
+              <div className="alert-message error" style={{
+                backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                borderLeft: '4px solid #ef4444',
+                color: '#ef4444',
+                padding: '12px 16px',
+                borderRadius: '6px',
+                marginBottom: '20px',
+                fontSize: '14px',
+                fontWeight: '500'
+              }}>
+                {status.error}
+              </div>
+            )}
+
+            <form className="consultation-form" onSubmit={handleSubmit}>
               <div className="form-row">
                 <div className="form-group form-input-animate">
                   <label>Full Name</label>
-                  <input type="text" placeholder="John Doe" />
+                  <input 
+                    type="text" 
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    placeholder="John Doe" 
+                    required 
+                  />
                 </div>
                 <div className="form-group form-input-animate">
                   <label>Company Name</label>
-                  <input type="text" placeholder="Enterprise Ltd." />
+                  <input 
+                    type="text" 
+                    name="companyName"
+                    value={formData.companyName}
+                    onChange={handleChange}
+                    placeholder="Enterprise Ltd." 
+                  />
                 </div>
               </div>
               
               <div className="form-group form-input-animate">
                 <label>Contact Number</label>
-                <input type="tel" placeholder="+91 00000 00000" />
+                <input 
+                  type="tel" 
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="+91 00000 00000" 
+                  required 
+                />
               </div>
               
               <div className="form-group form-input-animate">
                 <label>Service Interested In</label>
-                <select>
-                  <option>Commercial Debt Recovery</option>
-                  <option>Personal Loan EMI Support</option>
-                  <option>Payroll Compliance</option>
-                  <option>Financial Services</option>
+                <select 
+                  name="service"
+                  value={formData.service}
+                  onChange={handleChange}
+                >
+                  <option value="Commercial Debt Recovery">Commercial Debt Recovery</option>
+                  <option value="Personal Loan EMI Support">Personal Loan EMI Support</option>
+                  <option value="Payroll Compliance">Payroll Compliance</option>
+                  <option value="Financial Services">Financial Services</option>
                 </select>
               </div>
               
-              <button type="submit" className="btn-primary-callback">Request Professional Callback</button>
+              <button 
+                type="submit" 
+                className="btn-primary-callback"
+                disabled={status.loading}
+                style={{
+                  opacity: status.loading ? 0.7 : 1,
+                  cursor: status.loading ? 'not-allowed' : 'pointer'
+                }}
+              >
+                {status.loading ? 'Submitting Request...' : 'Request Professional Callback'}
+              </button>
             </form>
           </div>
         </div>

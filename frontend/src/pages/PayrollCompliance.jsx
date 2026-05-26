@@ -28,6 +28,66 @@ import '../ServiceDetail.css'; // Reusing some base styles like .faqs-list, .sd-
 export default function PayrollCompliance() {
   const [activeFaq, setActiveFaq] = useState(null);
 
+  const [formData, setFormData] = useState({
+    fullName: '',
+    companyName: '',
+    phone: '',
+    workEmail: '',
+    service: 'Payroll Processing',
+    message: ''
+  });
+
+  const [status, setStatus] = useState({
+    loading: false,
+    success: null,
+    error: null
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus({ loading: true, success: null, error: null });
+
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
+    try {
+      const response = await fetch(`${API_URL}/api/callback`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+      if (response.ok && data.success) {
+        setStatus({ loading: false, success: data.message, error: null });
+        setFormData({
+          fullName: '',
+          companyName: '',
+          phone: '',
+          workEmail: '',
+          service: 'Payroll Processing',
+          message: ''
+        });
+      } else {
+        setStatus({ loading: false, success: null, error: data.message || 'Failed to submit request.' });
+      }
+    } catch (err) {
+      setStatus({ 
+        loading: false, 
+        success: null, 
+        error: 'Unable to connect to the server. Please ensure the backend is running or try again later.' 
+      });
+    }
+  };
+
   const toggleFaq = (index) => {
     setActiveFaq(activeFaq === index ? null : index);
   };
@@ -291,44 +351,128 @@ export default function PayrollCompliance() {
           </div>
           
           <div className="sd-form-side">
-            <form className="sd-form">
+            {status.success && (
+              <div className="alert-message success" style={{
+                backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                borderLeft: '4px solid #10b981',
+                color: '#10b981',
+                padding: '12px 16px',
+                borderRadius: '6px',
+                marginBottom: '20px',
+                fontSize: '14px',
+                fontWeight: '500'
+              }}>
+                <strong>✓ Success!</strong>
+                <p style={{ margin: '4px 0 0 0', fontSize: '13px', fontWeight: 'normal', lineHeight: '1.4' }}>
+                  Your request has been submitted successfully!
+                </p>
+              </div>
+            )}
+
+            {status.error && (
+              <div className="alert-message error" style={{
+                backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                borderLeft: '4px solid #ef4444',
+                color: '#ef4444',
+                padding: '12px 16px',
+                borderRadius: '6px',
+                marginBottom: '20px',
+                fontSize: '14px',
+                fontWeight: '500'
+              }}>
+                {status.error}
+              </div>
+            )}
+
+            <form className="sd-form" onSubmit={handleSubmit}>
               <div className="form-row">
                 <div className="form-group form-input-animate">
                   <label>Full Name *</label>
-                  <input type="text" placeholder="John Doe" required />
+                  <input 
+                    type="text" 
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    placeholder="John Doe" 
+                    required 
+                  />
                 </div>
                 <div className="form-group form-input-animate">
                   <label>Company Name *</label>
-                  <input type="text" placeholder="Acme Corp" required />
+                  <input 
+                    type="text" 
+                    name="companyName"
+                    value={formData.companyName}
+                    onChange={handleChange}
+                    placeholder="Acme Corp" 
+                    required 
+                  />
                 </div>
               </div>
               
               <div className="form-row">
                 <div className="form-group form-input-animate">
                   <label>Phone Number *</label>
-                  <input type="tel" placeholder="+91 00000 00000" required />
+                  <input 
+                    type="tel" 
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="+91 00000 00000" 
+                    required 
+                  />
                 </div>
                 <div className="form-group form-input-animate">
                   <label>Email Address</label>
-                  <input type="email" placeholder="john@example.com" />
+                  <input 
+                    type="email" 
+                    name="workEmail"
+                    value={formData.workEmail}
+                    onChange={handleChange}
+                    placeholder="john@example.com" 
+                    required 
+                  />
                 </div>
               </div>
               
               <div className="form-group form-input-animate">
                 <label>Service Interested In</label>
-                <select>
-                  <option>Payroll Processing</option>
-                  <option>Statutory Compliance (PF/ESI)</option>
-                  <option>Comprehensive HR Outsourcing</option>
+                <select 
+                  name="service"
+                  value={formData.service}
+                  onChange={handleChange}
+                >
+                  <option value="Payroll Processing">Payroll Processing</option>
+                  <option value="Statutory Compliance (PF/ESI)">Statutory Compliance (PF/ESI)</option>
+                  <option value="Comprehensive HR Outsourcing">Comprehensive HR Outsourcing</option>
                 </select>
               </div>
               
               <div className="form-group form-input-animate">
                 <label>Message</label>
-                <textarea rows="4" placeholder="How can we help your business?"></textarea>
+                <textarea 
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows="4" 
+                  placeholder="How can we help your business?"
+                  required 
+                ></textarea>
               </div>
               
-              <button type="submit" className="sd-btn-submit" style={{background: 'var(--navy-deep)', color: 'white'}}>Submit Callback Request</button>
+              <button 
+                type="submit" 
+                className="sd-btn-submit" 
+                disabled={status.loading}
+                style={{
+                  background: 'var(--navy-deep)', 
+                  color: 'white',
+                  opacity: status.loading ? 0.7 : 1,
+                  cursor: status.loading ? 'not-allowed' : 'pointer'
+                }}
+              >
+                {status.loading ? 'Submitting Request...' : 'Submit Callback Request'}
+              </button>
             </form>
           </div>
         </div>
